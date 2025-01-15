@@ -12,33 +12,37 @@ class MinyDesignSystemExample extends StatefulWidget {
 }
 
 class _MinyDesignSystemExampleState extends State<MinyDesignSystemExample> {
-  bool _isLoading = false;
+  // final bool _isLoading = false;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: MinyTheme.lightTheme,
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(title: Text('Miny Design System')),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                MinyButton(
-                  label: "Get Started",
-                  isLoading: _isLoading,
-                  onPressed: () async {
-                    setState(() {
-                      _isLoading = true;
-                    });
-                    await Future.delayed(Duration(seconds: 2));
-                    setState(() {
-                      _isLoading = false;
-                    });
-                  },
+                MinyTextField(
+                  hintText: "Enter City",
                 ),
+                SizedBox(height: 10),
+                // MinyButton(
+                //   label: "Get Started",
+                //   isLoading: _isLoading,
+                //   onPressed: () async {
+                //     setState(() {
+                //       _isLoading = true;
+                //     });
+                //     await Future.delayed(Duration(seconds: 2));
+                //     setState(() {
+                //       _isLoading = false;
+                //     });
+                //   },
+                // ),
               ],
             ),
           ),
