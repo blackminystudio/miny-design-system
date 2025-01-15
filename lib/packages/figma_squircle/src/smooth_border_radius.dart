@@ -98,18 +98,22 @@ class SmoothBorderRadius extends BorderRadius {
 
   /// The top-left [SmoothRadius].
   @override
+  // ignore: overridden_fields
   final SmoothRadius topLeft;
 
   /// The top-right [SmoothRadius].
   @override
+  // ignore: overridden_fields
   final SmoothRadius topRight;
 
   /// The bottom-left [SmoothRadius].
   @override
+  // ignore: overridden_fields
   final SmoothRadius bottomLeft;
 
   /// The bottom-right [SmoothRadius].
   @override
+  // ignore: overridden_fields
   final SmoothRadius bottomRight;
 
   /// Creates a [Path] inside the given [Rect].
