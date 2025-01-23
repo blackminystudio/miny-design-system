@@ -14,8 +14,8 @@ class MinyTextField extends StatelessWidget {
       decoration: ShapeDecoration(
         shape: SmoothRectangleBorder(
           side: BorderSide(
-            color: Color(0xffE7E5E7),
             width: 2,
+            color: Color(0xffE7E5E7),
           ),
           borderRadius: SmoothBorderRadius(
             cornerRadius: 10,
@@ -25,19 +25,22 @@ class MinyTextField extends StatelessWidget {
       ),
       child: TextFormField(
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          contentPadding: EdgeInsets.symmetric(
+            vertical: 12,
+            horizontal: 16,
+          ),
           hintText: hintText,
           hintStyle: TextStyle(
-            fontSize: 18,
+            fontSize: 20,
             fontWeight: FontWeight.w500,
-            color: Colors.black87,
+            color: const Color(0xFFB5B3B2),
           ),
           border: InputBorder.none,
         ),
         style: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.w500,
-          color: Colors.black87,
+          fontSize: 20,
+          fontWeight: FontWeight.w700,
+          color: const Color(0xFF2C3441),
         ),
       ),
     );
