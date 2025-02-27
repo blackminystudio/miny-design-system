@@ -43,6 +43,13 @@ class _MinyDesignSystemExampleState extends State<MinyDesignSystemExample> {
                 //     });
                 //   },
                 // ),
+                ChoiceChip(
+                  label: Text("data"),
+                  selected: false,
+                  onSelected: (value) {
+                    value = !value;
+                  },
+                ),
               ],
             ),
           ),
