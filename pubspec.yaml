@@ -11,6 +11,8 @@ dependencies:
   vector_math: ^2.1.0
   flutter:
     sdk: flutter
+  iconsax: ^0.0.8
+  flutter_screenutil: ^5.9.3
 
 dev_dependencies:
   flutter_test:
@@ -51,5 +53,16 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+  fonts:
+    - family: Circular Std 
+      fonts:
+        - asset: assets/fonts/CircularStd-Regular.ttf
+          weight: 100 # Thin
+        - asset: assets/fonts/CircularStd-Medium.ttf
+          weight: 400 # Regular
+        - asset: assets/fonts/CircularStd-Semibold.ttf
+          weight: 700 # Bold
+        - asset: assets/fonts/CircularStd-Bold.ttf
+          weight: 900 # Black
   # For details regarding fonts in packages, see
   # https://flutter.dev/to/font-from-package
