@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../tokens/sizing_tokens.dart';
 
 class MinySizing extends ThemeExtension<MinySizing> {

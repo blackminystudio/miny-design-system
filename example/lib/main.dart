@@ -44,7 +44,10 @@ class _MinyDesignSystemExampleState extends State<MinyDesignSystemExample> {
                 //   },
                 // ),
                 ChoiceChip(
-                  label: Text("data"),
+                  label: Text(
+                    "data",
+                    style: Theme.of(context).textStyle.bodyLarge,
+                  ),
                   selected: false,
                   onSelected: (value) {
                     value = !value;

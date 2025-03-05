@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../tokens/spacing_tokens.dart';
 
 class MinySpacing extends ThemeExtension<MinySpacing> {

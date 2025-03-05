@@ -1,6 +1,7 @@
-import '../figma_squircle.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+import '../figma_squircle.dart';
 
 enum BorderAlign {
   inside,

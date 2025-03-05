@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:miny_design_system/packages/figma_squircle/figma_squircle.dart';
+
+import '../../packages/figma_squircle/figma_squircle.dart';
 
 class MinyTextField extends StatelessWidget {
   final String? hintText;

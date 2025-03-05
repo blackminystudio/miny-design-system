@@ -1,5 +1,6 @@
-import '../figma_squircle.dart';
 import 'package:flutter/widgets.dart';
+
+import '../figma_squircle.dart';
 
 class ClipSmoothRect extends StatelessWidget {
   const ClipSmoothRect({
