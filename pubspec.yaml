@@ -1,7 +1,7 @@
 name: miny_design_system
 description: "A modern design system for Flutter components and widgets."
 version: 0.0.1
-homepage: https://github.com/blackminystudio/miny_design_system
+homepage: https://github.com/blackminystudio/miny-design-system
 
 environment:
   sdk: ^3.6.0
@@ -24,7 +24,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # To add assets to your package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
@@ -54,12 +53,12 @@ flutter:
   #         weight: 700
   #
   fonts:
-    - family: Circular Std 
+    - family: Circular Std
       fonts:
         - asset: assets/fonts/CircularStd-Regular.ttf
-          weight: 100 # Thin
+          weight: 400 # Thin
         - asset: assets/fonts/CircularStd-Medium.ttf
-          weight: 400 # Regular
+          weight: 500 # Regular
         - asset: assets/fonts/CircularStd-Semibold.ttf
           weight: 700 # Bold
         - asset: assets/fonts/CircularStd-Bold.ttf

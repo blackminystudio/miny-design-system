@@ -1,5 +1,7 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
+
 import '../tokens/opacity_tokens.dart';
 
 class MinyOpacity extends ThemeExtension<MinyOpacity> {

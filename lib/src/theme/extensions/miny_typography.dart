@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../tokens/typography_tokens.dart';
 
 class MinyTypography extends ThemeExtension<MinyTypography> {

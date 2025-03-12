@@ -6,37 +6,37 @@ class TypographyTokens {
   static TextStyle bodyXxsmall = TextStyle(
     fontFamily: 'Circular Std',
     fontSize: 12.0.sp,
-    fontWeight: FontWeight.w100,
+    fontWeight: FontWeight.w400,
   );
   static TextStyle bodyXsmall = TextStyle(
     fontFamily: 'Circular Std',
     fontSize: 14.0.sp,
-    fontWeight: FontWeight.w100,
+    fontWeight: FontWeight.w400,
   );
   static TextStyle bodySmall = TextStyle(
     fontFamily: 'Circular Std',
     fontSize: 16.0.sp,
-    fontWeight: FontWeight.w100,
+    fontWeight: FontWeight.w400,
   );
   static TextStyle bodyMedium = TextStyle(
     fontFamily: 'Circular Std',
     fontSize: 20.0.sp,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
   );
   static TextStyle bodyLarge = TextStyle(
     fontFamily: 'Circular Std',
     fontSize: 24.0.sp,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
   );
   static TextStyle bodyXlarge = TextStyle(
     fontFamily: 'Circular Std',
     fontSize: 28.0.sp,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
   );
   static TextStyle bodyXxlarge = TextStyle(
     fontFamily: 'Circular Std',
     fontSize: 32.0.sp,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
   );
   //heading
   static TextStyle headingXxsmall = TextStyle(

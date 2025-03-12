@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:miny_design_system/miny_design_system.dart';
 
-void main() => runApp(MinyDesignSystemExample());
+void main() => runApp(
+      ScreenUtilInit(
+        designSize: const Size(440, 956),
+        minTextAdapt: true,
+        builder: (context, _) => const MinyDesignSystemExample(),
+      ),
+    );
 
 class MinyDesignSystemExample extends StatefulWidget {
   const MinyDesignSystemExample({super.key});
@@ -44,7 +51,10 @@ class _MinyDesignSystemExampleState extends State<MinyDesignSystemExample> {
                 //   },
                 // ),
                 ChoiceChip(
-                  label: Text("data"),
+                  label: Text(
+                    "data",
+                    style: Theme.of(context).textStyle.bodyLarge,
+                  ),
                   selected: false,
                   onSelected: (value) {
                     value = !value;
