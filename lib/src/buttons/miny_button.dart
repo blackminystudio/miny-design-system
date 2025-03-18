@@ -6,14 +6,14 @@ class MinyButton extends StatelessWidget {
   final String label;
   final VoidCallback onPressed;
   final bool isLoading;
-  final ImageProvider? icon;
+  final String? iconPath;
 
   const MinyButton({
     super.key,
     required this.label,
     required this.onPressed,
     this.isLoading = false,
-    this.icon,
+    this.iconPath,
   });
 
   @override
@@ -43,7 +43,7 @@ class MinyButton extends StatelessWidget {
                 Image(
                   height: theme.sizing.height.s7,
                   width: theme.sizing.height.s7,
-                  image: icon!,
+                  image: AssetImage(iconPath!),
                 ),
                 SizedBox(width: theme.spacing.width.s12),
                 Text(
