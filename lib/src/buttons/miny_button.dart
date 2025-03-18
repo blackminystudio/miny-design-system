@@ -41,8 +41,8 @@ class MinyButton extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Image(
-                  height: theme.sizing.height.s7,
-                  width: theme.sizing.height.s7,
+                  height: theme.sizing.height.s6,
+                  width: theme.sizing.height.s6,
                   image: AssetImage(iconPath!),
                 ),
                 SizedBox(width: theme.spacing.width.s12),
