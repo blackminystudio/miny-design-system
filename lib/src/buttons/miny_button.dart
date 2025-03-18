@@ -40,12 +40,13 @@ class MinyButton extends StatelessWidget {
           : Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Image(
-                  height: theme.sizing.height.s6,
-                  width: theme.sizing.height.s6,
-                  image: AssetImage(iconPath!),
-                ),
-                SizedBox(width: theme.spacing.width.s12),
+                if (iconPath != null)
+                  Image(
+                    height: theme.sizing.height.s6,
+                    width: theme.sizing.height.s6,
+                    image: AssetImage(iconPath!),
+                  ),
+                if (iconPath != null) SizedBox(width: theme.spacing.width.s12),
                 Text(
                   label,
                   style: theme.textStyle.bodyMedium.copyWith(
