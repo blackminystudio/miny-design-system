@@ -6,6 +6,7 @@ class MinyButton extends StatelessWidget {
   final String label;
   final VoidCallback onPressed;
   final bool isLoading;
+  final bool enableIcon;
   final String? iconPath;
 
   const MinyButton({
@@ -14,6 +15,7 @@ class MinyButton extends StatelessWidget {
     required this.onPressed,
     this.isLoading = false,
     this.iconPath,
+    this.enableIcon = false,
   });
 
   @override
@@ -40,13 +42,14 @@ class MinyButton extends StatelessWidget {
           : Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                if (iconPath != null)
+                if (enableIcon)
                   Image(
                     height: theme.sizing.height.s6,
                     width: theme.sizing.height.s6,
-                    image: AssetImage(iconPath!),
+                    image: AssetImage(iconPath ??
+                        'packages/miny_design_system/assets/images/google_icon.png'),
                   ),
-                if (iconPath != null) SizedBox(width: theme.spacing.width.s12),
+                if (enableIcon) SizedBox(width: theme.spacing.width.s12),
                 Text(
                   label,
                   style: theme.textStyle.bodyMedium.copyWith(
