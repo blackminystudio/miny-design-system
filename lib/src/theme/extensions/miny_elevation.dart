@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../tokens/elevation_tokens.dart';
+import '../token/elevation_tokens.dart';
 
 class MinyElevation extends ThemeExtension<MinyElevation> {
   final BoxShadow e1;

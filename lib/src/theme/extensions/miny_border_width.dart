@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import '../tokens/border_width_tokens.dart';
+import '../token/border_width_tokens.dart';
 
 class MinyBorderWidth extends ThemeExtension<MinyBorderWidth> {
   final double none;

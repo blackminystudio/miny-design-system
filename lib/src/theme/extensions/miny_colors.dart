@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../tokens/color_tokens.dart';
+import '../token/color_tokens.dart';
 
 class MinyColors extends ThemeExtension<MinyColors> {
   final Color textPrimary;

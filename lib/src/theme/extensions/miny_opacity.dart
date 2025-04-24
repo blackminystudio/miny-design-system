@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import '../tokens/opacity_tokens.dart';
+import '../token/opacity_tokens.dart';
 
 class MinyOpacity extends ThemeExtension<MinyOpacity> {
   final double o4;

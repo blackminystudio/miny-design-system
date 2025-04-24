@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import '../tokens/border_radius_tokens.dart';
+import '../token/border_radius_tokens.dart';
 
 class MinyBorderRadius extends ThemeExtension<MinyBorderRadius> {
   final double none;
@@ -13,8 +13,6 @@ class MinyBorderRadius extends ThemeExtension<MinyBorderRadius> {
   final double medium;
   final double large;
   final double xLarge;
-  double full(final double width) => 0.5 * width;
-
   const MinyBorderRadius({
     this.none = BorderRadiusTokens.none,
     this.xxSmall = BorderRadiusTokens.xxSmall,
@@ -47,6 +45,8 @@ class MinyBorderRadius extends ThemeExtension<MinyBorderRadius> {
         large: large ?? this.large,
         xLarge: xLarge ?? this.xLarge,
       );
+
+  double full(final double width) => 0.5 * width;
 
   @override
   ThemeExtension<MinyBorderRadius> lerp(

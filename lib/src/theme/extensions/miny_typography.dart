@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../tokens/typography_tokens.dart';
+import 'package:miny_design_system/src/theme/token/typography_tokens.dart';
 
 class MinyTypography extends ThemeExtension<MinyTypography> {
   final TextStyle bodyXxsmall;
