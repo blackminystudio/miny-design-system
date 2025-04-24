@@ -21,7 +21,7 @@ class ColorTokens {
   static const Color accentYellow = Color(0xFFF1B900);
   static const Color accentYellowAlpha = Color(0x1AF1B900);
   static const Color accentGreen = Color(0xFF13A700);
-  static const Color accentGreenAlpha = Color(0x1A13A700);
+  static const Color accentGreenAlphee = Color(0x1A13A700);
   static const LinearGradient gradientDark = LinearGradient(
     begin: Alignment.centerLeft,
     end: Alignment.centerRight,
