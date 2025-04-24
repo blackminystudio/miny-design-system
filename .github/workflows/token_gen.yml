@@ -1,11 +1,14 @@
-name: Generate Tokens on token branch
+name: Generate Flutter Design Tokens
 
 on:
   push:
     branches:
       - token
     paths:
-      - tokens/tokens.json
+      - "tokens/tokens.json"
+
+permissions:
+  contents: write
 
 jobs:
   generate_tokens:
@@ -15,11 +18,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Dart
-        uses: dart-lang/setup-dart@v1
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.29.3"
 
       - name: Install dependencies
-        run: dart pub get
+        run: flutter pub get
 
       - name: Run token generator
         run: dart run tool/token_generator.dart
