@@ -1,5 +1,6 @@
 // GENERATED FILE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
+
 import '../../tokens/color_tokens.dart';
 
 class MinyColors extends ThemeExtension<MinyColors> {
@@ -46,7 +47,7 @@ class MinyColors extends ThemeExtension<MinyColors> {
     this.accentRedAlpha = ColorTokens.accentRedAlpha,
     this.accentYellow = ColorTokens.accentYellow,
     this.accentYellowAlpha = ColorTokens.accentYellowAlpha,
-    this.accentGreen = ColorTokens.accentGreen,
+    this.accentGreen = ColorTokens.accentGreenNow,
     this.accentGreenAlpha = ColorTokens.accentGreenAlpha,
     this.gradientDark = ColorTokens.gradientDark,
     this.gradientPurple = ColorTokens.gradientPurple,
@@ -78,56 +79,83 @@ class MinyColors extends ThemeExtension<MinyColors> {
     LinearGradient? gradientDark,
     LinearGradient? gradientPurple,
     LinearGradient? gradientBlue,
-  }) => MinyColors(
-    textPrimary: textPrimary ?? this.textPrimary,
-    textSecondary: textSecondary ?? this.textSecondary,
-    textSecondarylight: textSecondarylight ?? this.textSecondarylight,
-    textAccentBlueText: textAccentBlueText ?? this.textAccentBlueText,
-    textAccentPurpleText: textAccentPurpleText ?? this.textAccentPurpleText,
-    textAccentGreenText: textAccentGreenText ?? this.textAccentGreenText,
-    neutralBackground: neutralBackground ?? this.neutralBackground,
-    neutralBorder: neutralBorder ?? this.neutralBorder,
-    neutralLight: neutralLight ?? this.neutralLight,
-    neutralLightBackground: neutralLightBackground ?? this.neutralLightBackground,
-    accentPurple: accentPurple ?? this.accentPurple,
-    accentPurpleAlpha: accentPurpleAlpha ?? this.accentPurpleAlpha,
-    accentBlue: accentBlue ?? this.accentBlue,
-    accentBlueAlpha: accentBlueAlpha ?? this.accentBlueAlpha,
-    accentRed: accentRed ?? this.accentRed,
-    accentRedAlpha: accentRedAlpha ?? this.accentRedAlpha,
-    accentYellow: accentYellow ?? this.accentYellow,
-    accentYellowAlpha: accentYellowAlpha ?? this.accentYellowAlpha,
-    accentGreen: accentGreen ?? this.accentGreen,
-    accentGreenAlpha: accentGreenAlpha ?? this.accentGreenAlpha,
-    gradientDark: gradientDark ?? this.gradientDark,
-    gradientPurple: gradientPurple ?? this.gradientPurple,
-    gradientBlue: gradientBlue ?? this.gradientBlue,
-  );
+  }) =>
+      MinyColors(
+        textPrimary: textPrimary ?? this.textPrimary,
+        textSecondary: textSecondary ?? this.textSecondary,
+        textSecondarylight: textSecondarylight ?? this.textSecondarylight,
+        textAccentBlueText: textAccentBlueText ?? this.textAccentBlueText,
+        textAccentPurpleText: textAccentPurpleText ?? this.textAccentPurpleText,
+        textAccentGreenText: textAccentGreenText ?? this.textAccentGreenText,
+        neutralBackground: neutralBackground ?? this.neutralBackground,
+        neutralBorder: neutralBorder ?? this.neutralBorder,
+        neutralLight: neutralLight ?? this.neutralLight,
+        neutralLightBackground:
+            neutralLightBackground ?? this.neutralLightBackground,
+        accentPurple: accentPurple ?? this.accentPurple,
+        accentPurpleAlpha: accentPurpleAlpha ?? this.accentPurpleAlpha,
+        accentBlue: accentBlue ?? this.accentBlue,
+        accentBlueAlpha: accentBlueAlpha ?? this.accentBlueAlpha,
+        accentRed: accentRed ?? this.accentRed,
+        accentRedAlpha: accentRedAlpha ?? this.accentRedAlpha,
+        accentYellow: accentYellow ?? this.accentYellow,
+        accentYellowAlpha: accentYellowAlpha ?? this.accentYellowAlpha,
+        accentGreen: accentGreen ?? this.accentGreen,
+        accentGreenAlpha: accentGreenAlpha ?? this.accentGreenAlpha,
+        gradientDark: gradientDark ?? this.gradientDark,
+        gradientPurple: gradientPurple ?? this.gradientPurple,
+        gradientBlue: gradientBlue ?? this.gradientBlue,
+      );
 
   @override
   MinyColors lerp(ThemeExtension<MinyColors>? other, double t) {
     if (other is! MinyColors) return this;
     return MinyColors(
       textPrimary: Color.lerp(textPrimary, other.textPrimary, t) ?? textPrimary,
-      textSecondary: Color.lerp(textSecondary, other.textSecondary, t) ?? textSecondary,
-      textSecondarylight: Color.lerp(textSecondarylight, other.textSecondarylight, t) ?? textSecondarylight,
-      textAccentBlueText: Color.lerp(textAccentBlueText, other.textAccentBlueText, t) ?? textAccentBlueText,
-      textAccentPurpleText: Color.lerp(textAccentPurpleText, other.textAccentPurpleText, t) ?? textAccentPurpleText,
-      textAccentGreenText: Color.lerp(textAccentGreenText, other.textAccentGreenText, t) ?? textAccentGreenText,
-      neutralBackground: Color.lerp(neutralBackground, other.neutralBackground, t) ?? neutralBackground,
-      neutralBorder: Color.lerp(neutralBorder, other.neutralBorder, t) ?? neutralBorder,
-      neutralLight: Color.lerp(neutralLight, other.neutralLight, t) ?? neutralLight,
-      neutralLightBackground: Color.lerp(neutralLightBackground, other.neutralLightBackground, t) ?? neutralLightBackground,
-      accentPurple: Color.lerp(accentPurple, other.accentPurple, t) ?? accentPurple,
-      accentPurpleAlpha: Color.lerp(accentPurpleAlpha, other.accentPurpleAlpha, t) ?? accentPurpleAlpha,
+      textSecondary:
+          Color.lerp(textSecondary, other.textSecondary, t) ?? textSecondary,
+      textSecondarylight:
+          Color.lerp(textSecondarylight, other.textSecondarylight, t) ??
+              textSecondarylight,
+      textAccentBlueText:
+          Color.lerp(textAccentBlueText, other.textAccentBlueText, t) ??
+              textAccentBlueText,
+      textAccentPurpleText:
+          Color.lerp(textAccentPurpleText, other.textAccentPurpleText, t) ??
+              textAccentPurpleText,
+      textAccentGreenText:
+          Color.lerp(textAccentGreenText, other.textAccentGreenText, t) ??
+              textAccentGreenText,
+      neutralBackground:
+          Color.lerp(neutralBackground, other.neutralBackground, t) ??
+              neutralBackground,
+      neutralBorder:
+          Color.lerp(neutralBorder, other.neutralBorder, t) ?? neutralBorder,
+      neutralLight:
+          Color.lerp(neutralLight, other.neutralLight, t) ?? neutralLight,
+      neutralLightBackground:
+          Color.lerp(neutralLightBackground, other.neutralLightBackground, t) ??
+              neutralLightBackground,
+      accentPurple:
+          Color.lerp(accentPurple, other.accentPurple, t) ?? accentPurple,
+      accentPurpleAlpha:
+          Color.lerp(accentPurpleAlpha, other.accentPurpleAlpha, t) ??
+              accentPurpleAlpha,
       accentBlue: Color.lerp(accentBlue, other.accentBlue, t) ?? accentBlue,
-      accentBlueAlpha: Color.lerp(accentBlueAlpha, other.accentBlueAlpha, t) ?? accentBlueAlpha,
+      accentBlueAlpha: Color.lerp(accentBlueAlpha, other.accentBlueAlpha, t) ??
+          accentBlueAlpha,
       accentRed: Color.lerp(accentRed, other.accentRed, t) ?? accentRed,
-      accentRedAlpha: Color.lerp(accentRedAlpha, other.accentRedAlpha, t) ?? accentRedAlpha,
-      accentYellow: Color.lerp(accentYellow, other.accentYellow, t) ?? accentYellow,
-      accentYellowAlpha: Color.lerp(accentYellowAlpha, other.accentYellowAlpha, t) ?? accentYellowAlpha,
+      accentRedAlpha:
+          Color.lerp(accentRedAlpha, other.accentRedAlpha, t) ?? accentRedAlpha,
+      accentYellow:
+          Color.lerp(accentYellow, other.accentYellow, t) ?? accentYellow,
+      accentYellowAlpha:
+          Color.lerp(accentYellowAlpha, other.accentYellowAlpha, t) ??
+              accentYellowAlpha,
       accentGreen: Color.lerp(accentGreen, other.accentGreen, t) ?? accentGreen,
-      accentGreenAlpha: Color.lerp(accentGreenAlpha, other.accentGreenAlpha, t) ?? accentGreenAlpha,
+      accentGreenAlpha:
+          Color.lerp(accentGreenAlpha, other.accentGreenAlpha, t) ??
+              accentGreenAlpha,
       gradientDark: gradientDark, // Gradient - no lerp
       gradientPurple: gradientPurple, // Gradient - no lerp
       gradientBlue: gradientBlue, // Gradient - no lerp
