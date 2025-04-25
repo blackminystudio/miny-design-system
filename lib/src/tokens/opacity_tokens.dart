@@ -5,7 +5,7 @@ class OpacityTokens {
   static const double o5 = 0.05;
   static const double o8 = 0.08;
   static const double o11 = 0.11;
-  static const double o12 = 0.12;
+  static const double o12Now = 0.12;
   static const double o14 = 0.14;
   static const double o24 = 0.24;
   static const double o38 = 0.38;

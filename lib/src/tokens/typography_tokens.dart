@@ -57,7 +57,7 @@ class TypographyTokens {
     fontWeight: FontWeight.w700,
     height: 1.43,
   );
-  static TextStyle get headingSmall => TextStyle(
+  static TextStyle get headingSmallNow => TextStyle(
     fontFamily: 'Circular Std',
     fontSize: 16.sp,
     fontWeight: FontWeight.w700,
