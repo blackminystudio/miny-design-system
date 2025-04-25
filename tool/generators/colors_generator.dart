@@ -66,78 +66,83 @@ Future<void> generateColors(Map<String, dynamic> colorTokens) async {
 }
 
 Future<void> generateColorsExtension(Map<String, dynamic> colorTokens) async {
-  final buffer = StringBuffer();
-  buffer.writeln('// GENERATED FILE - DO NOT MODIFY BY HAND');
-  buffer.writeln("import 'package:flutter/material.dart';");
-  buffer.writeln("import '../../tokens/color_tokens.dart';\n");
+  try {
+    final buffer = StringBuffer();
+    buffer.writeln('// GENERATED FILE - DO NOT MODIFY BY HAND');
+    buffer.writeln("import 'package:flutter/material.dart';");
+    buffer.writeln("import '../../tokens/color_tokens.dart';\n");
 
-  buffer.writeln("class MinyColors extends ThemeExtension<MinyColors> {");
+    buffer.writeln("class MinyColors extends ThemeExtension<MinyColors> {");
 
-  final flatTokens = <String, String>{};
+    final flatTokens = <String, String>{};
 
-  void extract(Map<String, dynamic> obj, String path) {
-    obj.forEach((key, value) {
-      final formattedKey = path.isEmpty
-          ? key
-          : '$path${key[0].toUpperCase()}${key.substring(1)}';
-      if (value is Map<String, dynamic> &&
-          value.containsKey('value') &&
-          value['type'] == 'color') {
-        final isGradient =
-            value['value'].toString().startsWith('linear-gradient');
-        flatTokens[formattedKey] = isGradient ? 'LinearGradient' : 'Color';
-      } else if (value is Map<String, dynamic>) {
-        extract(value, formattedKey);
-      }
-    });
-  }
-
-  extract(colorTokens, '');
-
-  // Add fields
-  for (final entry in flatTokens.entries) {
-    buffer.writeln("  final ${entry.value} ${entry.key};");
-  }
-
-  // Constructor
-  buffer.writeln("\n  const MinyColors({");
-  for (final key in flatTokens.keys) {
-    buffer.writeln("    this.$key = ColorTokens.$key,");
-  }
-  buffer.writeln("  });\n");
-
-  // copyWith
-  buffer.writeln("  @override");
-  buffer.writeln("  MinyColors copyWith({");
-  for (final entry in flatTokens.entries) {
-    buffer.writeln("    ${entry.value}? ${entry.key},");
-  }
-  buffer.writeln("  }) => MinyColors(");
-  for (final key in flatTokens.keys) {
-    buffer.writeln("    $key: $key ?? this.$key,");
-  }
-  buffer.writeln("  );\n");
-
-  // lerp
-  buffer.writeln("  @override");
-  buffer.writeln(
-      "  MinyColors lerp(ThemeExtension<MinyColors>? other, double t) {");
-  buffer.writeln("    if (other is! MinyColors) return this;");
-  buffer.writeln("    return MinyColors(");
-  for (final entry in flatTokens.entries) {
-    if (entry.value == 'Color') {
-      buffer.writeln(
-          "      ${entry.key}: Color.lerp(${entry.key}, other.${entry.key}, t) ?? ${entry.key},");
-    } else {
-      buffer.writeln("      ${entry.key}: ${entry.key}, // Gradient - no lerp");
+    void extract(Map<String, dynamic> obj, String path) {
+      obj.forEach((key, value) {
+        final formattedKey = path.isEmpty
+            ? key
+            : '$path${key[0].toUpperCase()}${key.substring(1)}';
+        if (value is Map<String, dynamic> &&
+            value.containsKey('value') &&
+            value['type'] == 'color') {
+          final isGradient =
+              value['value'].toString().startsWith('linear-gradient');
+          flatTokens[formattedKey] = isGradient ? 'LinearGradient' : 'Color';
+        } else if (value is Map<String, dynamic>) {
+          extract(value, formattedKey);
+        }
+      });
     }
-  }
-  buffer.writeln("    );");
-  buffer.writeln("  }\n}");
 
-  final file = File('lib/src/theme/extensions/miny_colors.dart');
-  await file.writeAsString(buffer.toString());
-  print('✅ Generated miny_colors.dart extension');
+    extract(colorTokens, '');
+
+    // Add fields
+    for (final entry in flatTokens.entries) {
+      buffer.writeln("  final ${entry.value} ${entry.key};");
+    }
+
+    // Constructor
+    buffer.writeln("\n  const MinyColors({");
+    for (final key in flatTokens.keys) {
+      buffer.writeln("    this.$key = ColorTokens.$key,");
+    }
+    buffer.writeln("  });\n");
+
+    // copyWith
+    buffer.writeln("  @override");
+    buffer.writeln("  MinyColors copyWith({");
+    for (final entry in flatTokens.entries) {
+      buffer.writeln("    ${entry.value}? ${entry.key},");
+    }
+    buffer.writeln("  }) => MinyColors(");
+    for (final key in flatTokens.keys) {
+      buffer.writeln("    $key: $key ?? this.$key,");
+    }
+    buffer.writeln("  );\n");
+
+    // lerp
+    buffer.writeln("  @override");
+    buffer.writeln(
+        "  MinyColors lerp(ThemeExtension<MinyColors>? other, double t) {");
+    buffer.writeln("    if (other is! MinyColors) return this;");
+    buffer.writeln("    return MinyColors(");
+    for (final entry in flatTokens.entries) {
+      if (entry.value == 'Color') {
+        buffer.writeln(
+            "      ${entry.key}: Color.lerp(${entry.key}, other.${entry.key}, t) ?? ${entry.key},");
+      } else {
+        buffer
+            .writeln("      ${entry.key}: ${entry.key}, // Gradient - no lerp");
+      }
+    }
+    buffer.writeln("    );");
+    buffer.writeln("  }\n}");
+
+    final file = File('lib/src/theme/extensions/miny_colors.dart');
+    await file.writeAsString(buffer.toString());
+    print('✅ Generated miny_colors.dart extension');
+  } catch (e) {
+    print('ERROR: $e');
+  }
 }
 
 String toFlatPascal(String input) {
