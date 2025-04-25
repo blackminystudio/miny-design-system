@@ -21,7 +21,7 @@ class MinyColors extends ThemeExtension<MinyColors> {
   final Color accentRedAlpha;
   final Color accentYellow;
   final Color accentYellowAlpha;
-  final Color accentGreenTake;
+  final Color accentGreen;
   final Color accentGreenAlpha;
   final LinearGradient gradientDark;
   final LinearGradient gradientPurple;
@@ -46,7 +46,7 @@ class MinyColors extends ThemeExtension<MinyColors> {
     this.accentRedAlpha = ColorTokens.accentRedAlpha,
     this.accentYellow = ColorTokens.accentYellow,
     this.accentYellowAlpha = ColorTokens.accentYellowAlpha,
-    this.accentGreenTake = ColorTokens.accentGreenTake,
+    this.accentGreen = ColorTokens.accentGreen,
     this.accentGreenAlpha = ColorTokens.accentGreenAlpha,
     this.gradientDark = ColorTokens.gradientDark,
     this.gradientPurple = ColorTokens.gradientPurple,
@@ -73,7 +73,7 @@ class MinyColors extends ThemeExtension<MinyColors> {
     Color? accentRedAlpha,
     Color? accentYellow,
     Color? accentYellowAlpha,
-    Color? accentGreenTake,
+    Color? accentGreen,
     Color? accentGreenAlpha,
     LinearGradient? gradientDark,
     LinearGradient? gradientPurple,
@@ -97,7 +97,7 @@ class MinyColors extends ThemeExtension<MinyColors> {
     accentRedAlpha: accentRedAlpha ?? this.accentRedAlpha,
     accentYellow: accentYellow ?? this.accentYellow,
     accentYellowAlpha: accentYellowAlpha ?? this.accentYellowAlpha,
-    accentGreenTake: accentGreenTake ?? this.accentGreenTake,
+    accentGreen: accentGreen ?? this.accentGreen,
     accentGreenAlpha: accentGreenAlpha ?? this.accentGreenAlpha,
     gradientDark: gradientDark ?? this.gradientDark,
     gradientPurple: gradientPurple ?? this.gradientPurple,
@@ -126,7 +126,7 @@ class MinyColors extends ThemeExtension<MinyColors> {
       accentRedAlpha: Color.lerp(accentRedAlpha, other.accentRedAlpha, t) ?? accentRedAlpha,
       accentYellow: Color.lerp(accentYellow, other.accentYellow, t) ?? accentYellow,
       accentYellowAlpha: Color.lerp(accentYellowAlpha, other.accentYellowAlpha, t) ?? accentYellowAlpha,
-      accentGreenTake: Color.lerp(accentGreenTake, other.accentGreenTake, t) ?? accentGreenTake,
+      accentGreen: Color.lerp(accentGreen, other.accentGreen, t) ?? accentGreen,
       accentGreenAlpha: Color.lerp(accentGreenAlpha, other.accentGreenAlpha, t) ?? accentGreenAlpha,
       gradientDark: gradientDark, // Gradient - no lerp
       gradientPurple: gradientPurple, // Gradient - no lerp
