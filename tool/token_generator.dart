@@ -23,6 +23,8 @@ Future<void> main() async {
 
   final tokens = json['global'] as Map<String, dynamic>;
 
+  // Token Generators
+
   await generateColors(tokens['color']);
   await generateSpacing(tokens['spacing']);
   await generateSizing(tokens['sizing']);
@@ -31,6 +33,17 @@ Future<void> main() async {
   await generateElevation(tokens['elevation']);
   await generateBorderRadius(tokens['borderRadius']);
   await generateBorderWidth(tokens['borderWidth']);
+  print('✅ All tokens generated successfully!');
 
-  log('✅ All tokens generated successfully!');
+  // Extentions Generators
+
+  await generateColorsExtension(tokens['color']);
+  await generateSpacingExtension(tokens['spacing']);
+  await generateSizingExtension(tokens['sizing']);
+  await generateTypographyExtension(tokens['typography']);
+  await generateOpacityExtension(tokens['opacity']);
+  await generateElevationExtension(tokens['elevation']);
+  await generateBorderRadiusExtension(tokens['borderRadius']);
+  await generateBorderWidthExtension(tokens['borderWidth']);
+  print('✅ All extensions generated successfully!');
 }

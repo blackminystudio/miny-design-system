@@ -33,6 +33,62 @@ Future<void> generateElevation(Map<String, dynamic> elevationTokens) async {
   print('✅ Generated elevation_tokens.dart');
 }
 
+Future<void> generateElevationExtension(
+    Map<String, dynamic> elevationTokens) async {
+  final buffer = StringBuffer();
+
+  buffer.writeln("import 'package:flutter/material.dart';");
+  buffer.writeln("import '../../tokens/elevation_tokens.dart';");
+  buffer.writeln("");
+  buffer.writeln("class MinyElevation extends ThemeExtension<MinyElevation> {");
+
+  // Fields
+  for (final key in elevationTokens.keys) {
+    buffer.writeln("  final BoxShadow $key;");
+  }
+
+  buffer.writeln("");
+  buffer.writeln("  const MinyElevation({");
+  for (final key in elevationTokens.keys) {
+    buffer.writeln("    this.$key = ElevationTokens.$key,");
+  }
+  buffer.writeln("  });");
+
+  // copyWith
+  buffer.writeln("");
+  buffer.writeln("  @override");
+  buffer.writeln("  MinyElevation copyWith({");
+  for (final key in elevationTokens.keys) {
+    buffer.writeln("    BoxShadow? $key,");
+  }
+  buffer.writeln("  }) =>");
+  buffer.writeln("      MinyElevation(");
+  for (final key in elevationTokens.keys) {
+    buffer.writeln("        $key: $key ?? this.$key,");
+  }
+  buffer.writeln("      );");
+
+  // lerp
+  buffer.writeln("");
+  buffer.writeln("  @override");
+  buffer.writeln(
+      "  MinyElevation lerp(ThemeExtension<MinyElevation>? other, double t) {");
+  buffer.writeln("    if (other is! MinyElevation) return this;");
+  buffer.writeln("    return MinyElevation(");
+  for (final key in elevationTokens.keys) {
+    buffer.writeln("      $key: BoxShadow.lerp($key, other.$key, t) ?? $key,");
+  }
+  buffer.writeln("    );");
+  buffer.writeln("  }");
+
+  buffer.writeln("}");
+
+  final file = File('lib/src/theme/extensions/miny_elevation.dart');
+  await file.writeAsString(buffer.toString());
+
+  print('✅ Generated miny_elevation.dart');
+}
+
 String parseShadowColor(String hex) {
   final cleaned = hex.replaceAll('#', '');
   if (cleaned.length == 8) {

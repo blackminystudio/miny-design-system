@@ -1,8 +1,6 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-
-import '../token/border_radius_tokens.dart';
+import '../../tokens/border_radius_tokens.dart';
 
 class MinyBorderRadius extends ThemeExtension<MinyBorderRadius> {
   final double none;
@@ -13,6 +11,7 @@ class MinyBorderRadius extends ThemeExtension<MinyBorderRadius> {
   final double medium;
   final double large;
   final double xLarge;
+
   const MinyBorderRadius({
     this.none = BorderRadiusTokens.none,
     this.xxSmall = BorderRadiusTokens.xxSmall,
@@ -25,15 +24,15 @@ class MinyBorderRadius extends ThemeExtension<MinyBorderRadius> {
   });
 
   @override
-  ThemeExtension<MinyBorderRadius> copyWith({
-    final double? none,
-    final double? xxSmall,
-    final double? xSmall,
-    final double? small,
-    final double? normal,
-    final double? medium,
-    final double? large,
-    final double? xLarge,
+  MinyBorderRadius copyWith({
+    double? none,
+    double? xxSmall,
+    double? xSmall,
+    double? small,
+    double? normal,
+    double? medium,
+    double? large,
+    double? xLarge,
   }) =>
       MinyBorderRadius(
         none: none ?? this.none,
@@ -46,16 +45,11 @@ class MinyBorderRadius extends ThemeExtension<MinyBorderRadius> {
         xLarge: xLarge ?? this.xLarge,
       );
 
-  double full(final double width) => 0.5 * width;
+  double full(double width) => 0.5 * width;
 
   @override
-  ThemeExtension<MinyBorderRadius> lerp(
-    final ThemeExtension<MinyBorderRadius>? other,
-    final double t,
-  ) {
-    if (other is! MinyBorderRadius) {
-      return this;
-    }
+  MinyBorderRadius lerp(ThemeExtension<MinyBorderRadius>? other, double t) {
+    if (other is! MinyBorderRadius) return this;
     return MinyBorderRadius(
       none: lerpDouble(none, other.none, t) ?? none,
       xxSmall: lerpDouble(xxSmall, other.xxSmall, t) ?? xxSmall,

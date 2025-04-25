@@ -43,6 +43,75 @@ Future<void> generateTypography(Map<String, dynamic> typographyTokens) async {
   print('✅ Generated typography_tokens.dart');
 }
 
+Future<void> generateTypographyExtension(
+    Map<String, dynamic> typographyTokens) async {
+  final buffer = StringBuffer();
+
+  buffer.writeln('// GENERATED FILE - DO NOT MODIFY BY HAND');
+  buffer.writeln("import 'package:flutter/material.dart';");
+  buffer.writeln("import '../../tokens/typography_tokens.dart';\n");
+
+  buffer
+      .writeln('class MinyTypography extends ThemeExtension<MinyTypography> {');
+
+  final keys = <String>[];
+
+  typographyTokens.forEach((group, sizes) {
+    if (sizes is Map<String, dynamic>) {
+      for (final size in sizes.keys) {
+        final name = '$group${toPascalCase(size)}';
+        keys.add(name);
+        buffer.writeln('  final TextStyle $name;');
+      }
+    }
+  });
+
+  buffer.writeln('\n  MinyTypography({');
+  for (final key in keys) {
+    buffer.writeln('    TextStyle? $key,');
+  }
+  buffer.writeln('  })  :');
+  for (int i = 0; i < keys.length; i++) {
+    final key = keys[i];
+    final comma = i == keys.length - 1 ? ';' : ',';
+    buffer.writeln('        $key = $key ?? TypographyTokens.$key$comma');
+  }
+
+  // copyWith
+  buffer.writeln('\n  @override');
+  buffer.writeln('  MinyTypography copyWith({');
+  for (final key in keys) {
+    buffer.writeln('    TextStyle? $key,');
+  }
+  buffer.writeln('  }) => MinyTypography(');
+  for (final key in keys) {
+    buffer.writeln('    $key: $key ?? this.$key,');
+  }
+  buffer.writeln('  );');
+
+  // lerp
+  buffer.writeln('\n  @override');
+  buffer.writeln(
+      '  MinyTypography lerp(ThemeExtension<MinyTypography>? other, double t) {');
+  buffer.writeln('    if (other is! MinyTypography) return this;');
+  buffer.writeln('    return MinyTypography(');
+  for (final key in keys) {
+    buffer.writeln('      $key: TextStyle.lerp($key, other.$key, t) ?? $key,');
+  }
+  buffer.writeln('    );');
+  buffer.writeln('  }');
+
+  buffer.writeln('}');
+
+  final file = File('lib/src/theme/extensions/miny_typography.dart');
+  await file.writeAsString(buffer.toString());
+  print('✅ Generated miny_typography.dart');
+}
+
+String toPascalCase(String input) {
+  return input[0].toUpperCase() + input.substring(1);
+}
+
 String _capitalize(String input) => input[0].toUpperCase() + input.substring(1);
 
 String _convertWeight(String value) {
