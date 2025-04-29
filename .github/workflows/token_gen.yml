@@ -29,6 +29,12 @@ jobs:
       - name: Run token generator
         run: dart run tool/token_generator.dart
 
+      - name: Dart Format
+        run: dart format . --set-exit-if-changed
+
+      - name: Dart Analyze
+        run: flutter analyze --fatal-infos .
+
       - name: Commit generated token files
         run: |
           git config user.name "miny-bot"
