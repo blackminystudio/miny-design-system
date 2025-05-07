@@ -38,7 +38,7 @@ class ColorTokens {
       Color.fromRGBO(145, 108, 255, 0.01)
     ],
   );
-  static const LinearGradient gradientBlue = LinearGradient(
+  static const LinearGradient gradientBluese = LinearGradient(
     begin: Alignment.centerLeft,
     end: Alignment.centerRight,
     colors: [

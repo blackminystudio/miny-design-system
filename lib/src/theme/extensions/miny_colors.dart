@@ -25,7 +25,7 @@ class MinyColors extends ThemeExtension<MinyColors> {
   final Color accentGreenAlpha;
   final LinearGradient gradientDark;
   final LinearGradient gradientPurple;
-  final LinearGradient gradientBlue;
+  final LinearGradient gradientBluese;
 
   const MinyColors({
     this.textPrimary = ColorTokens.textPrimary,
@@ -50,7 +50,7 @@ class MinyColors extends ThemeExtension<MinyColors> {
     this.accentGreenAlpha = ColorTokens.accentGreenAlpha,
     this.gradientDark = ColorTokens.gradientDark,
     this.gradientPurple = ColorTokens.gradientPurple,
-    this.gradientBlue = ColorTokens.gradientBlue,
+    this.gradientBluese = ColorTokens.gradientBluese,
   });
 
   @override
@@ -77,7 +77,7 @@ class MinyColors extends ThemeExtension<MinyColors> {
     Color? accentGreenAlpha,
     LinearGradient? gradientDark,
     LinearGradient? gradientPurple,
-    LinearGradient? gradientBlue,
+    LinearGradient? gradientBluese,
   }) =>
       MinyColors(
         textPrimary: textPrimary ?? this.textPrimary,
@@ -103,7 +103,7 @@ class MinyColors extends ThemeExtension<MinyColors> {
         accentGreenAlpha: accentGreenAlpha ?? this.accentGreenAlpha,
         gradientDark: gradientDark ?? this.gradientDark,
         gradientPurple: gradientPurple ?? this.gradientPurple,
-        gradientBlue: gradientBlue ?? this.gradientBlue,
+        gradientBluese: gradientBluese ?? this.gradientBluese,
       );
 
   @override
@@ -157,7 +157,7 @@ class MinyColors extends ThemeExtension<MinyColors> {
               accentGreenAlpha,
       gradientDark: gradientDark, // Gradient - no lerp
       gradientPurple: gradientPurple, // Gradient - no lerp
-      gradientBlue: gradientBlue, // Gradient - no lerp
+      gradientBluese: gradientBluese, // Gradient - no lerp
     );
   }
 }
