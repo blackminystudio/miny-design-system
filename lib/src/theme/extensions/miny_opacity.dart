@@ -1,8 +1,6 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-
-import '../tokens/opacity_tokens.dart';
+import '../../tokens/opacity_tokens.dart';
 
 class MinyOpacity extends ThemeExtension<MinyOpacity> {
   final double o4;
@@ -34,19 +32,19 @@ class MinyOpacity extends ThemeExtension<MinyOpacity> {
   });
 
   @override
-  ThemeExtension<MinyOpacity> copyWith({
-    final double? o4,
-    final double? o5,
-    final double? o8,
-    final double? o11,
-    final double? o12,
-    final double? o14,
-    final double? o24,
-    final double? o38,
-    final double? o40,
-    final double? o48,
-    final double? o60,
-    final double? o72,
+  MinyOpacity copyWith({
+    double? o4,
+    double? o5,
+    double? o8,
+    double? o11,
+    double? o12,
+    double? o14,
+    double? o24,
+    double? o38,
+    double? o40,
+    double? o48,
+    double? o60,
+    double? o72,
   }) =>
       MinyOpacity(
         o4: o4 ?? this.o4,
@@ -64,11 +62,8 @@ class MinyOpacity extends ThemeExtension<MinyOpacity> {
       );
 
   @override
-  ThemeExtension<MinyOpacity> lerp(
-      final ThemeExtension<MinyOpacity>? other, final double t) {
-    if (other is! MinyOpacity) {
-      return this;
-    }
+  MinyOpacity lerp(ThemeExtension<MinyOpacity>? other, double t) {
+    if (other is! MinyOpacity) return this;
     return MinyOpacity(
       o4: lerpDouble(o4, other.o4, t) ?? o4,
       o5: lerpDouble(o5, other.o5, t) ?? o5,

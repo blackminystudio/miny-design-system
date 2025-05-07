@@ -1,8 +1,6 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-
-import '../tokens/border_width_tokens.dart';
+import '../../tokens/border_width_tokens.dart';
 
 class MinyBorderWidth extends ThemeExtension<MinyBorderWidth> {
   final double none;
@@ -16,12 +14,13 @@ class MinyBorderWidth extends ThemeExtension<MinyBorderWidth> {
     this.medium = BorderWidthTokens.medium,
     this.large = BorderWidthTokens.large,
   });
+
   @override
-  ThemeExtension<MinyBorderWidth> copyWith({
-    final double? none,
-    final double? small,
-    final double? medium,
-    final double? large,
+  MinyBorderWidth copyWith({
+    double? none,
+    double? small,
+    double? medium,
+    double? large,
   }) =>
       MinyBorderWidth(
         none: none ?? this.none,
@@ -31,13 +30,8 @@ class MinyBorderWidth extends ThemeExtension<MinyBorderWidth> {
       );
 
   @override
-  ThemeExtension<MinyBorderWidth> lerp(
-    final ThemeExtension<MinyBorderWidth>? other,
-    final double t,
-  ) {
-    if (other is! MinyBorderWidth) {
-      return this;
-    }
+  MinyBorderWidth lerp(ThemeExtension<MinyBorderWidth>? other, double t) {
+    if (other is! MinyBorderWidth) return this;
     return MinyBorderWidth(
       none: lerpDouble(none, other.none, t) ?? none,
       small: lerpDouble(small, other.small, t) ?? small,

@@ -1,6 +1,6 @@
+// GENERATED FILE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
-
-import '../tokens/typography_tokens.dart';
+import '../../tokens/typography_tokens.dart';
 
 class MinyTypography extends ThemeExtension<MinyTypography> {
   final TextStyle bodyXxsmall;
@@ -49,21 +49,21 @@ class MinyTypography extends ThemeExtension<MinyTypography> {
         headingXxlarge = headingXxlarge ?? TypographyTokens.headingXxlarge;
 
   @override
-  ThemeExtension<MinyTypography> copyWith({
-    final TextStyle? bodyXxsmall,
-    final TextStyle? bodyXsmall,
-    final TextStyle? bodySmall,
-    final TextStyle? bodyMedium,
-    final TextStyle? bodyLarge,
-    final TextStyle? bodyXlarge,
-    final TextStyle? bodyXxlarge,
-    final TextStyle? headingXxsmall,
-    final TextStyle? headingXsmall,
-    final TextStyle? headingSmall,
-    final TextStyle? headingMedium,
-    final TextStyle? headingLarge,
-    final TextStyle? headingXlarge,
-    final TextStyle? headingXxlarge,
+  MinyTypography copyWith({
+    TextStyle? bodyXxsmall,
+    TextStyle? bodyXsmall,
+    TextStyle? bodySmall,
+    TextStyle? bodyMedium,
+    TextStyle? bodyLarge,
+    TextStyle? bodyXlarge,
+    TextStyle? bodyXxlarge,
+    TextStyle? headingXxsmall,
+    TextStyle? headingXsmall,
+    TextStyle? headingSmall,
+    TextStyle? headingMedium,
+    TextStyle? headingLarge,
+    TextStyle? headingXlarge,
+    TextStyle? headingXxlarge,
   }) =>
       MinyTypography(
         bodyXxsmall: bodyXxsmall ?? this.bodyXxsmall,
@@ -83,13 +83,8 @@ class MinyTypography extends ThemeExtension<MinyTypography> {
       );
 
   @override
-  ThemeExtension<MinyTypography> lerp(
-    final ThemeExtension<MinyTypography>? other,
-    final double t,
-  ) {
-    if (other is! MinyTypography) {
-      return this;
-    }
+  MinyTypography lerp(ThemeExtension<MinyTypography>? other, double t) {
+    if (other is! MinyTypography) return this;
     return MinyTypography(
       bodyXxsmall:
           TextStyle.lerp(bodyXxsmall, other.bodyXxsmall, t) ?? bodyXxsmall,

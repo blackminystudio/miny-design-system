@@ -1,7 +1,7 @@
+// GENERATED FILE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../tokens/sizing_tokens.dart';
+import '../../tokens/sizing_tokens.dart';
 
 class MinySizing extends ThemeExtension<MinySizing> {
   final SizingDimensions width;
@@ -20,18 +20,14 @@ class MinySizing extends ThemeExtension<MinySizing> {
 
   @override
   MinySizing lerp(ThemeExtension<MinySizing>? other, double t) {
-    if (other is! MinySizing) {
-      return this;
-    }
+    if (other is! MinySizing) return this;
     return MinySizing();
   }
 }
 
 class SizingDimensions {
   final double Function(double) scale;
-
   SizingDimensions({required this.scale});
-
   double get s2 => scale(SizingTokens.s2);
   double get s3 => scale(SizingTokens.s3);
   double get s4 => scale(SizingTokens.s4);
