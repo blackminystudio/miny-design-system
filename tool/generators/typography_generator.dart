@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 Future<void> generateTypography(Map<String, dynamic> typographyTokens) async {
@@ -40,7 +41,7 @@ Future<void> generateTypography(Map<String, dynamic> typographyTokens) async {
   final file = File('lib/src/tokens/typography_tokens.dart');
   await file.writeAsString(buffer.toString());
 
-  print('✅ Generated typography_tokens.dart');
+  log('✅ Generated typography_tokens.dart');
 }
 
 Future<void> generateTypographyExtension(
@@ -105,7 +106,7 @@ Future<void> generateTypographyExtension(
 
   final file = File('lib/src/theme/extensions/miny_typography.dart');
   await file.writeAsString(buffer.toString());
-  print('✅ Generated miny_typography.dart');
+  log('✅ Generated miny_typography.dart');
 }
 
 String toPascalCase(String input) {

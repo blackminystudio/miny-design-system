@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 Future<void> generateOpacity(Map<String, dynamic> opacityTokens) async {
@@ -16,7 +17,7 @@ Future<void> generateOpacity(Map<String, dynamic> opacityTokens) async {
   final file = File('lib/src/tokens/opacity_tokens.dart');
   await file.writeAsString(buffer.toString());
 
-  print('✅ Generated opacity_tokens.dart');
+  log('✅ Generated opacity_tokens.dart');
 }
 
 Future<void> generateOpacityExtension(
@@ -73,5 +74,5 @@ Future<void> generateOpacityExtension(
   final file = File('lib/src/theme/extensions/miny_opacity.dart');
   await file.writeAsString(buffer.toString());
 
-  print('✅ Generated miny_opacity.dart');
+  log('✅ Generated miny_opacity.dart');
 }

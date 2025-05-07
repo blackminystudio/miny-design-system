@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 Future<void> generateBorderWidth(Map<String, dynamic> widthTokens) async {
@@ -16,7 +17,7 @@ Future<void> generateBorderWidth(Map<String, dynamic> widthTokens) async {
   final file = File('lib/src/tokens/border_width_tokens.dart');
   await file.writeAsString(buffer.toString());
 
-  print('✅ Generated border_width_tokens.dart');
+  log('✅ Generated border_width_tokens.dart');
 }
 
 Future<void> generateBorderWidthExtension(
@@ -74,5 +75,5 @@ Future<void> generateBorderWidthExtension(
   final file = File('lib/src/theme/extensions/miny_border_width.dart');
   await file.writeAsString(buffer.toString());
 
-  print('✅ Generated miny_border_width.dart');
+  log('✅ Generated miny_border_width.dart');
 }

@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 Future<void> generateSizing(Map<String, dynamic> sizingTokens) async {
@@ -16,7 +17,7 @@ Future<void> generateSizing(Map<String, dynamic> sizingTokens) async {
   final file = File('lib/src/tokens/sizing_tokens.dart');
   await file.writeAsString(buffer.toString());
 
-  print('✅ Generated sizing_tokens.dart');
+  log('✅ Generated sizing_tokens.dart');
 }
 
 Future<void> generateSizingExtension(Map<String, dynamic> sizingTokens) async {
@@ -65,5 +66,5 @@ Future<void> generateSizingExtension(Map<String, dynamic> sizingTokens) async {
 
   final file = File('lib/src/theme/extensions/miny_sizing.dart');
   await file.writeAsString(buffer.toString());
-  print('✅ Generated miny_sizing.dart');
+  log('✅ Generated miny_sizing.dart');
 }

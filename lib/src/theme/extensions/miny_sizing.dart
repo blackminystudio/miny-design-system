@@ -15,14 +15,14 @@ class MinySizing extends ThemeExtension<MinySizing> {
   MinySizing copyWith({
     SizingDimensions? width,
     SizingDimensions? height,
-  }) => MinySizing();
+  }) =>
+      MinySizing();
 
   @override
   MinySizing lerp(ThemeExtension<MinySizing>? other, double t) {
     if (other is! MinySizing) return this;
     return MinySizing();
   }
-
 }
 
 class SizingDimensions {

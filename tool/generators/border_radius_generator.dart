@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 Future<void> generateBorderRadius(Map<String, dynamic> radiusTokens) async {
@@ -16,7 +17,7 @@ Future<void> generateBorderRadius(Map<String, dynamic> radiusTokens) async {
   final file = File('lib/src/tokens/border_radius_tokens.dart');
   await file.writeAsString(buffer.toString());
 
-  print('✅ Generated border_radius_tokens.dart');
+  log('✅ Generated border_radius_tokens.dart');
 }
 
 Future<void> generateBorderRadiusExtension(
@@ -78,5 +79,5 @@ Future<void> generateBorderRadiusExtension(
   final file = File('lib/src/theme/extensions/miny_border_radius.dart');
   await file.writeAsString(buffer.toString());
 
-  print('✅ Generated miny_border_radius.dart');
+  log('✅ Generated miny_border_radius.dart');
 }

@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 Future<void> generateElevation(Map<String, dynamic> elevationTokens) async {
@@ -30,7 +31,7 @@ Future<void> generateElevation(Map<String, dynamic> elevationTokens) async {
   final file = File('lib/src/tokens/elevation_tokens.dart');
   await file.writeAsString(buffer.toString());
 
-  print('✅ Generated elevation_tokens.dart');
+  log('✅ Generated elevation_tokens.dart');
 }
 
 Future<void> generateElevationExtension(
@@ -86,7 +87,7 @@ Future<void> generateElevationExtension(
   final file = File('lib/src/theme/extensions/miny_elevation.dart');
   await file.writeAsString(buffer.toString());
 
-  print('✅ Generated miny_elevation.dart');
+  log('✅ Generated miny_elevation.dart');
 }
 
 String parseShadowColor(String hex) {

@@ -15,14 +15,14 @@ class MinySpacing extends ThemeExtension<MinySpacing> {
   MinySpacing copyWith({
     SpacingDimensions? width,
     SpacingDimensions? height,
-  }) => MinySpacing();
+  }) =>
+      MinySpacing();
 
   @override
   MinySpacing lerp(ThemeExtension<MinySpacing>? other, double t) {
     if (other is! MinySpacing) return this;
     return MinySpacing();
   }
-
 }
 
 class SpacingDimensions {

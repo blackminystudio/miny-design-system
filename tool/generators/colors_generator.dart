@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 String extractGradient(String value) {
@@ -62,7 +63,7 @@ Future<void> generateColors(Map<String, dynamic> colorTokens) async {
   final file = File('lib/src/tokens/color_tokens.dart');
   await file.writeAsString(buffer.toString());
 
-  print('✅ Generated color_tokens.dart (colors + gradients combined)');
+  log('✅ Generated color_tokens.dart (colors + gradients combined)');
 }
 
 Future<void> generateColorsExtension(Map<String, dynamic> colorTokens) async {
@@ -139,9 +140,9 @@ Future<void> generateColorsExtension(Map<String, dynamic> colorTokens) async {
 
     final file = File('lib/src/theme/extensions/miny_colors.dart');
     await file.writeAsString(buffer.toString());
-    print('✅ Generated miny_colors.dart extension');
+    log('✅ Generated miny_colors.dart extension');
   } catch (e) {
-    print('ERROR: $e');
+    log('ERROR: $e');
   }
 }
 

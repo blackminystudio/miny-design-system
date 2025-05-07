@@ -33,7 +33,7 @@ Future<void> main() async {
   await generateElevation(tokens['elevation']);
   await generateBorderRadius(tokens['borderRadius']);
   await generateBorderWidth(tokens['borderWidth']);
-  print('✅ All tokens generated successfully!');
+  log('✅ All tokens generated successfully!');
 
   // Extentions Generators
 
@@ -45,5 +45,5 @@ Future<void> main() async {
   await generateElevationExtension(tokens['elevation']);
   await generateBorderRadiusExtension(tokens['borderRadius']);
   await generateBorderWidthExtension(tokens['borderWidth']);
-  print('✅ All extensions generated successfully!');
+  log('✅ All extensions generated successfully!');
 }

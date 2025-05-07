@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 Future<void> generateSpacing(Map<String, dynamic> spacingTokens) async {
@@ -15,7 +16,7 @@ Future<void> generateSpacing(Map<String, dynamic> spacingTokens) async {
 
   final file = File('lib/src/tokens/spacing_tokens.dart');
   await file.writeAsString(buffer.toString());
-  print('✅ Generated spacing_tokens.dart');
+  log('✅ Generated spacing_tokens.dart');
 }
 
 Future<void> generateSpacingExtension(
@@ -65,5 +66,5 @@ Future<void> generateSpacingExtension(
 
   final file = File('lib/src/theme/extensions/miny_spacing.dart');
   await file.writeAsString(buffer.toString());
-  print('✅ Generated miny_spacing.dart');
+  log('✅ Generated miny_spacing.dart');
 }
