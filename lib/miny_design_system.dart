@@ -1,5 +1,7 @@
 library;
 
+// Figma Squircle
+export 'packages/figma_squircle/figma_squircle.dart';
 // Buttons
 export 'src/buttons/miny_button.dart';
 // InputFields

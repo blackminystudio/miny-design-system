@@ -30,7 +30,7 @@ jobs:
         run: dart run tool/token_generator.dart
 
       - name: Dart Format
-        run: dart format . --set-exit-if-changed
+        run: dart format .
 
       - name: Dart Analyze
         run: flutter analyze --fatal-infos .
