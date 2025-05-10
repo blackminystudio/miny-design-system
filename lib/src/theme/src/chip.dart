@@ -1,32 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:miny_design_system/miny_design_system.dart';
 
-import '../../../packages/figma_squircle/figma_squircle.dart';
+final theme = ThemeData();
 
 final chipThemeData = ChipThemeData(
+  showCheckmark: false,
   padding: EdgeInsets.symmetric(
-    vertical: 15,
-    horizontal: 44,
+    vertical: theme.spacing.height.s16,
+    horizontal: theme.spacing.height.s40,
   ),
   labelPadding: EdgeInsets.zero,
-  selectedColor: const Color(0xFF2C3441),
-  backgroundColor: const Color(0xFFFFFFFF),
-  labelStyle: TextStyle(
-    fontSize: 15,
-    fontWeight: FontWeight.w700,
-    color: const Color(0xFF2C3441),
+  selectedColor: theme.colors.textPrimary,
+  backgroundColor: theme.colors.neutralLight,
+  labelStyle: theme.textStyle.headingSmall.copyWith(
+    color: theme.colors.textPrimary,
   ),
-  secondaryLabelStyle: TextStyle(
-    fontSize: 15,
-    fontWeight: FontWeight.w700,
-    color: const Color(0xFFFFFFFF),
+  secondaryLabelStyle: theme.textStyle.headingSmall.copyWith(
+    color: theme.colors.neutralLight,
   ),
-  showCheckmark: false,
-  secondarySelectedColor: const Color(0xFF2C3441),
+  secondarySelectedColor: theme.colors.textPrimary,
+  // TODO: DS: Token Disabled Color
   disabledColor: const Color(0xFF9E9E9E),
   shape: SmoothRectangleBorder(
     borderRadius: SmoothBorderRadius(
-      cornerRadius: 15,
       cornerSmoothing: 1,
+      cornerRadius: theme.borderradius.medium,
     ),
   ),
 );

@@ -29,15 +29,26 @@ class _MinyDesignSystemExampleState extends State<MinyDesignSystemExample> {
         backgroundColor: Colors.white,
         body: Center(
           child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: MinyButton(
-                label: "Sign up with google",
-                onPressed: () {},
-                isLoading: true,
-                enableIcon: true,
-                iconPath: null,
-                // 'packages/miny_design_system/assets/images/google_icon.png',
-              )),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                MinyButton(
+                  label: "Sign up with google",
+                  onPressed: () {},
+                  isLoading: false,
+                  enableIcon: true,
+                  iconPath: null,
+                ),
+                SizedBox(height: 20.h),
+                ChoiceChip(
+                  label: Text("Government Job"),
+                  onSelected: (value) {},
+                  selected: false,
+                )
+              ],
+            ),
+          ),
         ),
       ),
     );

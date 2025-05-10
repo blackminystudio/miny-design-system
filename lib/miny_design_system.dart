@@ -4,6 +4,8 @@ library;
 export 'packages/figma_squircle/figma_squircle.dart';
 // Buttons
 export 'src/buttons/miny_button.dart';
+// Cards
+export 'src/cards/miny_container.dart';
 // InputFields
 export 'src/inputfields/miny_textfield.dart';
 // Progress
