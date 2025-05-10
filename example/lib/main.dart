@@ -33,6 +33,7 @@ class _MinyDesignSystemExampleState extends State<MinyDesignSystemExample> {
               child: MinyButton(
                 label: "Sign up with google",
                 onPressed: () {},
+                isLoading: true,
                 enableIcon: true,
                 iconPath: null,
                 // 'packages/miny_design_system/assets/images/google_icon.png',
