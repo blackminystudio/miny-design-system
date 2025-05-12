@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:miny_design_system/miny_design_system.dart';
 
-final theme = ThemeData();
+final _theme = ThemeData();
 final elevatedButtonThemeData = ElevatedButtonThemeData(
   style: ButtonStyle(
     minimumSize: WidgetStateProperty.all(
       Size(
         double.infinity,
-        theme.sizing.height.s14,
+        _theme.sizing.height.s14,
       ),
     ),
     backgroundColor: WidgetStateProperty.resolveWith<Color>(
@@ -16,7 +16,7 @@ final elevatedButtonThemeData = ElevatedButtonThemeData(
           // TODO: DS: Token Disabled Color
           return const Color(0xff757376);
         }
-        return theme.colors.neutralBackground;
+        return _theme.colors.neutralBackground;
       },
     ),
     foregroundColor: WidgetStateProperty.resolveWith<Color>(
@@ -25,7 +25,7 @@ final elevatedButtonThemeData = ElevatedButtonThemeData(
           // TODO: DS: Token Disabled Color
           return const Color(0xffB5B5B5);
         }
-        return theme.colors.neutralLight;
+        return _theme.colors.neutralLight;
       },
     ),
     enableFeedback: true,
@@ -36,7 +36,7 @@ final elevatedButtonThemeData = ElevatedButtonThemeData(
       SmoothRectangleBorder(
         borderRadius: SmoothBorderRadius(
           cornerSmoothing: 1,
-          cornerRadius: theme.borderradius.medium,
+          cornerRadius: _theme.borderradius.medium,
         ),
       ),
     ),

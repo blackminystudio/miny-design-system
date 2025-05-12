@@ -33,19 +33,29 @@ class _MinyDesignSystemExampleState extends State<MinyDesignSystemExample> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                MinyButton(
-                  label: "Sign up with google",
-                  onPressed: () {},
-                  isLoading: false,
-                  enableIcon: true,
-                  iconPath: null,
+                // MinyButton(
+                //   label: "Sign up with google",
+                //   onPressed: () {},
+                //   isLoading: false,
+                //   enableIcon: true,
+                //   iconPath: null,
+                // ),
+                // SizedBox(height: 20.h),
+                // ChoiceChip(
+                //   label: Text("Government Job"),
+                //   onSelected: (value) {},
+                //   selected: false,
+                // ),
+                TextFormField(
+                  style: Theme.of(context).textStyle.bodyMedium,
+                  onChanged: (value) {},
+                  onFieldSubmitted: (value) {},
+                  controller: TextEditingController(),
+                  focusNode: FocusNode(),
+                  decoration: InputDecoration(
+                    hintText: "Enter your email",
+                  ),
                 ),
-                SizedBox(height: 20.h),
-                ChoiceChip(
-                  label: Text("Government Job"),
-                  onSelected: (value) {},
-                  selected: false,
-                )
               ],
             ),
           ),
