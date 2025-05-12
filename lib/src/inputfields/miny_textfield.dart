@@ -3,10 +3,19 @@ import 'package:flutter/material.dart';
 import '../../packages/figma_squircle/figma_squircle.dart';
 
 class MinyTextField extends StatelessWidget {
+  final TextEditingController? controller;
+  final FocusNode? focusNode;
+  final Function(String)? onFieldSubmitted, onChanged;
   final String? hintText;
+  final TextStyle? style;
   const MinyTextField({
     super.key,
     this.hintText,
+    this.controller,
+    this.focusNode,
+    this.onFieldSubmitted,
+    this.onChanged,
+    this.style,
   });
 
   @override
@@ -25,6 +34,10 @@ class MinyTextField extends StatelessWidget {
         ),
       ),
       child: TextFormField(
+        onFieldSubmitted: onFieldSubmitted,
+        onChanged: onChanged,
+        focusNode: focusNode,
+        controller: controller,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(
             vertical: 12,
@@ -38,11 +51,12 @@ class MinyTextField extends StatelessWidget {
           ),
           border: InputBorder.none,
         ),
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.w700,
-          color: const Color(0xFF2C3441),
-        ),
+        style: style ??
+            TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w700,
+              color: const Color(0xFF2C3441),
+            ),
       ),
     );
   }
