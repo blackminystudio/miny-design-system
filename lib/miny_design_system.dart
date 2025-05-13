@@ -6,8 +6,6 @@ export 'packages/figma_squircle/figma_squircle.dart';
 export 'src/buttons/miny_button.dart';
 // Cards
 export 'src/cards/miny_container.dart';
-// InputFields
-export 'src/inputfields/miny_textfield.dart';
 // Progress
 export 'src/progress/miny_loader.dart';
 // Miny Theme
