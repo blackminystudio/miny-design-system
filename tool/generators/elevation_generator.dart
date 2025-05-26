@@ -2,27 +2,28 @@ import 'dart:developer';
 import 'dart:io';
 
 Future<void> generateElevation(Map<String, dynamic> elevationTokens) async {
-  final buffer = StringBuffer();
-  buffer.writeln('// GENERATED FILE - DO NOT MODIFY BY HAND');
-  buffer.writeln("import 'package:flutter/material.dart';");
-  buffer.writeln('');
-  buffer.writeln('class ElevationTokens {');
+  final buffer = StringBuffer()
+    ..writeln('// GENERATED FILE - DO NOT MODIFY BY HAND')
+    ..writeln("import 'package:flutter/material.dart';")
+    ..writeln()
+    ..writeln('class ElevationTokens {');
 
   elevationTokens.forEach((key, value) {
     final shadows = value['value'];
     if (shadows is List && shadows.isNotEmpty) {
       final shadow = shadows.first;
-      final color = parseShadowColor(shadow['color']);
+      final color = parseShadowColor(shadow['color'] as String);
       final x = shadow['x'];
       final y = shadow['y'];
       final blur = shadow['blur'];
       final spread = shadow['spread'];
-      buffer.writeln('  static const BoxShadow $key = BoxShadow(');
-      buffer.writeln('    color: $color,');
-      buffer.writeln('    offset: Offset($x, $y),');
-      buffer.writeln('    blurRadius: $blur,');
-      buffer.writeln('    spreadRadius: $spread,');
-      buffer.writeln('  );');
+      buffer
+        ..writeln('  static const BoxShadow $key = BoxShadow(')
+        ..writeln('    color: $color,')
+        ..writeln('    offset: Offset($x, $y),')
+        ..writeln('    blurRadius: $blur,')
+        ..writeln('    spreadRadius: $spread,')
+        ..writeln('  );');
     }
   });
 
@@ -36,53 +37,56 @@ Future<void> generateElevation(Map<String, dynamic> elevationTokens) async {
 
 Future<void> generateElevationExtension(
     Map<String, dynamic> elevationTokens) async {
-  final buffer = StringBuffer();
-
-  buffer.writeln("import 'package:flutter/material.dart';");
-  buffer.writeln("import '../../tokens/elevation_tokens.dart';");
-  buffer.writeln("");
-  buffer.writeln("class MinyElevation extends ThemeExtension<MinyElevation> {");
+  final buffer = StringBuffer()
+    ..writeln("import 'package:flutter/material.dart';")
+    ..writeln("import '../../tokens/elevation_tokens.dart';")
+    ..writeln()
+    ..writeln('class MinyElevation extends ThemeExtension<MinyElevation> {');
 
   // Fields
   for (final key in elevationTokens.keys) {
-    buffer.writeln("  final BoxShadow $key;");
+    buffer.writeln('  final BoxShadow $key;');
   }
 
-  buffer.writeln("");
-  buffer.writeln("  const MinyElevation({");
+  buffer
+    ..writeln()
+    ..writeln('  const MinyElevation({');
   for (final key in elevationTokens.keys) {
-    buffer.writeln("    this.$key = ElevationTokens.$key,");
+    buffer.writeln('    this.$key = ElevationTokens.$key,');
   }
-  buffer.writeln("  });");
+  buffer
+    ..writeln('  });')
 
-  // copyWith
-  buffer.writeln("");
-  buffer.writeln("  @override");
-  buffer.writeln("  MinyElevation copyWith({");
+    // copyWith
+    ..writeln()
+    ..writeln('  @override')
+    ..writeln('  MinyElevation copyWith({');
   for (final key in elevationTokens.keys) {
-    buffer.writeln("    BoxShadow? $key,");
+    buffer.writeln('    BoxShadow? $key,');
   }
-  buffer.writeln("  }) =>");
-  buffer.writeln("      MinyElevation(");
+  buffer
+    ..writeln('  }) =>')
+    ..writeln('      MinyElevation(');
   for (final key in elevationTokens.keys) {
-    buffer.writeln("        $key: $key ?? this.$key,");
+    buffer.writeln('        $key: $key ?? this.$key,');
   }
-  buffer.writeln("      );");
+  buffer
+    ..writeln('      );')
 
-  // lerp
-  buffer.writeln("");
-  buffer.writeln("  @override");
-  buffer.writeln(
-      "  MinyElevation lerp(ThemeExtension<MinyElevation>? other, double t) {");
-  buffer.writeln("    if (other is! MinyElevation) return this;");
-  buffer.writeln("    return MinyElevation(");
+    // lerp
+    ..writeln()
+    ..writeln('  @override')
+    ..writeln(
+        '  MinyElevation lerp(ThemeExtension<MinyElevation>? other, double t){')
+    ..writeln('    if (other is! MinyElevation) return this;')
+    ..writeln('    return MinyElevation(');
   for (final key in elevationTokens.keys) {
-    buffer.writeln("      $key: BoxShadow.lerp($key, other.$key, t) ?? $key,");
+    buffer.writeln('      $key: BoxShadow.lerp($key, other.$key, t) ?? $key,');
   }
-  buffer.writeln("    );");
-  buffer.writeln("  }");
-
-  buffer.writeln("}");
+  buffer
+    ..writeln('    );')
+    ..writeln('  }')
+    ..writeln('}');
 
   final file = File('lib/src/theme/extensions/miny_elevation.dart');
   await file.writeAsString(buffer.toString());

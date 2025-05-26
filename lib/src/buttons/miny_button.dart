@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:miny_design_system/miny_design_system.dart';
+import 'package:miny_design_system/utilities/constants.dart';
 
 /// A custom button for Miny Design System.
 class MinyButton extends StatelessWidget {
@@ -21,6 +22,7 @@ class MinyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
     return ElevatedButton(
       onPressed: isLoading ? null : onPressed,
       style: ButtonStyle().copyWith(
@@ -38,23 +40,22 @@ class MinyButton extends StatelessWidget {
               child: CircularProgressIndicator(
                 strokeWidth: 2.5,
                 strokeCap: StrokeCap.round,
-                valueColor:
-                    AlwaysStoppedAnimation<Color>(theme.colors.neutralLight),
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  theme.colors.neutralLight,
+                ),
               ),
             )
           : Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                if (enableIcon)
+                if (enableIcon) ...[
                   Image(
                     height: theme.sizing.height.s6,
                     width: theme.sizing.height.s6,
-                    image: AssetImage(
-                      iconPath ??
-                          'packages/miny_design_system/assets/images/google_icon.png',
-                    ),
+                    image: AssetImage(iconPath ?? Constants.googleIconPath),
                   ),
-                if (enableIcon) SizedBox(width: theme.spacing.width.s12),
+                  SizedBox(width: theme.spacing.width.s12),
+                ],
                 Text(
                   label,
                   style: theme.textStyle.bodyMedium.copyWith(
