@@ -4,8 +4,8 @@ import '../figma_squircle.dart';
 
 class ClipSmoothRect extends StatelessWidget {
   const ClipSmoothRect({
-    super.key,
     required this.child,
+    super.key,
     this.radius = SmoothBorderRadius.zero,
     this.clipBehavior = Clip.antiAlias,
   });
@@ -15,13 +15,11 @@ class ClipSmoothRect extends StatelessWidget {
   final Widget child;
 
   @override
-  Widget build(BuildContext context) {
-    return ClipPath.shape(
-      clipBehavior: clipBehavior,
-      shape: SmoothRectangleBorder(
-        borderRadius: radius,
-      ),
-      child: child,
-    );
-  }
+  Widget build(BuildContext context) => ClipPath.shape(
+        clipBehavior: clipBehavior,
+        shape: SmoothRectangleBorder(
+          borderRadius: radius,
+        ),
+        child: child,
+      );
 }

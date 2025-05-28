@@ -2,17 +2,17 @@ import 'dart:developer';
 import 'dart:io';
 
 Future<void> generateTypography(Map<String, dynamic> typographyTokens) async {
-  final buffer = StringBuffer();
-  buffer.writeln('// GENERATED FILE - DO NOT MODIFY BY HAND');
-  buffer.writeln("import 'package:flutter/material.dart';");
-  buffer
-      .writeln("import 'package:flutter_screenutil/flutter_screenutil.dart';");
-  buffer.writeln('');
-  buffer.writeln('class TypographyTokens {');
+  final buffer = StringBuffer()
+    ..writeln('// GENERATED FILE - DO NOT MODIFY BY HAND')
+    ..writeln("import 'package:flutter/material.dart';")
+    ..writeln("import 'package:flutter_screenutil/flutter_screenutil.dart';")
+    ..writeln()
+    ..writeln('class TypographyTokens {');
 
   void addStyles(String groupName, Map<String, dynamic> groupTokens) {
     groupTokens.forEach((key, token) {
-      final value = token['value'];
+      final value =
+          (token as Map<String, dynamic>)['value'] as Map<String, dynamic>;
       final fontFamily = value['fontFamily'];
       final fontSize = value['fontSize'];
       final lineHeight = value['lineHeight'];
@@ -21,20 +21,21 @@ Future<void> generateTypography(Map<String, dynamic> typographyTokens) async {
       final height = (double.parse(lineHeight.toString()) /
               double.parse(fontSize.toString()))
           .toStringAsFixed(2);
-      final dartWeight = _convertWeight(weight);
+      final dartWeight = _convertWeight(weight as String);
 
       final name = '$groupName${_capitalize(key)}';
-      buffer.writeln('  static TextStyle get $name => TextStyle(');
-      buffer.writeln("    fontFamily: '$fontFamily',");
-      buffer.writeln("    fontSize: $fontSize.sp,");
-      buffer.writeln("    fontWeight: $dartWeight,");
-      buffer.writeln("    height: $height,");
-      buffer.writeln("  );");
+      buffer
+        ..writeln('  static TextStyle get $name => TextStyle(')
+        ..writeln("    fontFamily: '$fontFamily',")
+        ..writeln('    fontSize: $fontSize.sp,')
+        ..writeln('    fontWeight: $dartWeight,')
+        ..writeln('    height: $height,')
+        ..writeln('  );');
     });
   }
 
-  addStyles('body', typographyTokens['body']);
-  addStyles('heading', typographyTokens['heading']);
+  addStyles('body', typographyTokens['body'] as Map<String, dynamic>);
+  addStyles('heading', typographyTokens['heading'] as Map<String, dynamic>);
 
   buffer.writeln('}');
 
@@ -46,14 +47,11 @@ Future<void> generateTypography(Map<String, dynamic> typographyTokens) async {
 
 Future<void> generateTypographyExtension(
     Map<String, dynamic> typographyTokens) async {
-  final buffer = StringBuffer();
-
-  buffer.writeln('// GENERATED FILE - DO NOT MODIFY BY HAND');
-  buffer.writeln("import 'package:flutter/material.dart';");
-  buffer.writeln("import '../../tokens/typography_tokens.dart';\n");
-
-  buffer
-      .writeln('class MinyTypography extends ThemeExtension<MinyTypography> {');
+  final buffer = StringBuffer()
+    ..writeln('// GENERATED FILE - DO NOT MODIFY BY HAND')
+    ..writeln("import 'package:flutter/material.dart';")
+    ..writeln("import '../../tokens/typography_tokens.dart';\n")
+    ..writeln('class MinyTypography extends ThemeExtension<MinyTypography> {');
 
   final keys = <String>[];
 
@@ -72,15 +70,16 @@ Future<void> generateTypographyExtension(
     buffer.writeln('    TextStyle? $key,');
   }
   buffer.writeln('  })  :');
-  for (int i = 0; i < keys.length; i++) {
+  for (var i = 0; i < keys.length; i++) {
     final key = keys[i];
     final comma = i == keys.length - 1 ? ';' : ',';
     buffer.writeln('        $key = $key ?? TypographyTokens.$key$comma');
   }
 
   // copyWith
-  buffer.writeln('\n  @override');
-  buffer.writeln('  MinyTypography copyWith({');
+  buffer
+    ..writeln('\n  @override')
+    ..writeln('  MinyTypography copyWith({');
   for (final key in keys) {
     buffer.writeln('    TextStyle? $key,');
   }
@@ -88,30 +87,31 @@ Future<void> generateTypographyExtension(
   for (final key in keys) {
     buffer.writeln('    $key: $key ?? this.$key,');
   }
-  buffer.writeln('  );');
+  buffer
+    ..writeln('  );')
 
-  // lerp
-  buffer.writeln('\n  @override');
-  buffer.writeln(
-      '  MinyTypography lerp(ThemeExtension<MinyTypography>? other, double t) {');
-  buffer.writeln('    if (other is! MinyTypography) return this;');
-  buffer.writeln('    return MinyTypography(');
+    // lerp
+    ..writeln('\n  @override')
+    ..writeln(
+      '  MinyTypography lerp(ThemeExtension<MinyTypography>? other, double t){',
+    )
+    ..writeln('    if (other is! MinyTypography) return this;')
+    ..writeln('    return MinyTypography(');
   for (final key in keys) {
     buffer.writeln('      $key: TextStyle.lerp($key, other.$key, t) ?? $key,');
   }
-  buffer.writeln('    );');
-  buffer.writeln('  }');
-
-  buffer.writeln('}');
+  buffer
+    ..writeln('    );')
+    ..writeln('  }')
+    ..writeln('}');
 
   final file = File('lib/src/theme/extensions/miny_typography.dart');
   await file.writeAsString(buffer.toString());
   log('✅ Generated miny_typography.dart');
 }
 
-String toPascalCase(String input) {
-  return input[0].toUpperCase() + input.substring(1);
-}
+String toPascalCase(String input) =>
+    input[0].toUpperCase() + input.substring(1);
 
 String _capitalize(String input) => input[0].toUpperCase() + input.substring(1);
 

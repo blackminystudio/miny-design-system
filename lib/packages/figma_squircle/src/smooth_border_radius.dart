@@ -83,14 +83,14 @@ class SmoothBorderRadius extends BorderRadius {
     Radius? topRight,
     Radius? bottomLeft,
     Radius? bottomRight,
-  }) {
-    return SmoothBorderRadius.only(
-      topLeft: topLeft is SmoothRadius ? topLeft : this.topLeft,
-      topRight: topRight is SmoothRadius ? topRight : this.topRight,
-      bottomLeft: bottomLeft is SmoothRadius ? bottomLeft : this.bottomLeft,
-      bottomRight: bottomRight is SmoothRadius ? bottomRight : this.bottomRight,
-    );
-  }
+  }) =>
+      SmoothBorderRadius.only(
+        topLeft: topLeft is SmoothRadius ? topLeft : this.topLeft,
+        topRight: topRight is SmoothRadius ? topRight : this.topRight,
+        bottomLeft: bottomLeft is SmoothRadius ? bottomLeft : this.bottomLeft,
+        bottomRight:
+            bottomRight is SmoothRadius ? bottomRight : this.bottomRight,
+      );
 
   /// A border radius with all zero radii.
   static const SmoothBorderRadius zero =
@@ -206,58 +206,48 @@ class SmoothBorderRadius extends BorderRadius {
   ///
   /// This is the same as multiplying the object by -1.0.
   @override
-  SmoothBorderRadius operator -() {
-    return SmoothBorderRadius.only(
-      topLeft: (-topLeft) as SmoothRadius,
-      topRight: (-topRight) as SmoothRadius,
-      bottomLeft: (-bottomLeft) as SmoothRadius,
-      bottomRight: (-bottomRight) as SmoothRadius,
-    );
-  }
+  SmoothBorderRadius operator -() => SmoothBorderRadius.only(
+        topLeft: (-topLeft) as SmoothRadius,
+        topRight: (-topRight) as SmoothRadius,
+        bottomLeft: (-bottomLeft) as SmoothRadius,
+        bottomRight: (-bottomRight) as SmoothRadius,
+      );
 
   /// Scales each corner of the [BorderRadius] by the given factor.
   @override
-  SmoothBorderRadius operator *(double other) {
-    return SmoothBorderRadius.only(
-      topLeft: topLeft * other,
-      topRight: topRight * other,
-      bottomLeft: bottomLeft * other,
-      bottomRight: bottomRight * other,
-    );
-  }
+  SmoothBorderRadius operator *(double other) => SmoothBorderRadius.only(
+        topLeft: topLeft * other,
+        topRight: topRight * other,
+        bottomLeft: bottomLeft * other,
+        bottomRight: bottomRight * other,
+      );
 
   /// Divides each corner of the [BorderRadius] by the given factor.
   @override
-  SmoothBorderRadius operator /(double other) {
-    return SmoothBorderRadius.only(
-      topLeft: topLeft / other,
-      topRight: topRight / other,
-      bottomLeft: bottomLeft / other,
-      bottomRight: bottomRight / other,
-    );
-  }
+  SmoothBorderRadius operator /(double other) => SmoothBorderRadius.only(
+        topLeft: topLeft / other,
+        topRight: topRight / other,
+        bottomLeft: bottomLeft / other,
+        bottomRight: bottomRight / other,
+      );
 
   /// Integer divides each corner of the [BorderRadius] by the given factor.
   @override
-  SmoothBorderRadius operator ~/(double other) {
-    return SmoothBorderRadius.only(
-      topLeft: topLeft ~/ other,
-      topRight: topRight ~/ other,
-      bottomLeft: bottomLeft ~/ other,
-      bottomRight: bottomRight ~/ other,
-    );
-  }
+  SmoothBorderRadius operator ~/(double other) => SmoothBorderRadius.only(
+        topLeft: topLeft ~/ other,
+        topRight: topRight ~/ other,
+        bottomLeft: bottomLeft ~/ other,
+        bottomRight: bottomRight ~/ other,
+      );
 
   /// Computes the remainder of each corner by the given factor.
   @override
-  SmoothBorderRadius operator %(double other) {
-    return SmoothBorderRadius.only(
-      topLeft: topLeft % other,
-      topRight: topRight % other,
-      bottomLeft: bottomLeft % other,
-      bottomRight: bottomRight % other,
-    );
-  }
+  SmoothBorderRadius operator %(double other) => SmoothBorderRadius.only(
+        topLeft: topLeft % other,
+        topRight: topRight % other,
+        bottomLeft: bottomLeft % other,
+        bottomRight: bottomRight % other,
+      );
 
   /// Linearly interpolate between two [BorderRadius] objects.
   ///
@@ -295,10 +285,10 @@ class SmoothBorderRadius extends BorderRadius {
     }
 
     return 'SmoothBorderRadius('
-        'topLeft: $topLeft,'
-        'topRight: $topRight,'
-        'bottomLeft: $bottomLeft,'
-        'bottomRight: $bottomRight,'
+        'topLeft: $topLeft, '
+        'topRight: $topRight, '
+        'bottomLeft: $bottomLeft, '
+        'bottomRight: $bottomRight, '
         ')';
   }
 }

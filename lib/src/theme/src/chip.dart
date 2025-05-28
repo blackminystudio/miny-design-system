@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:miny_design_system/miny_design_system.dart';
+
+import '../../../miny_design_system.dart';
 
 final theme = ThemeData();
 

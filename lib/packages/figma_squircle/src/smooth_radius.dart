@@ -1,5 +1,9 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
 class SmoothRadius extends Radius {
   const SmoothRadius({
     required double cornerRadius,
@@ -130,7 +134,7 @@ class SmoothRadius extends Radius {
       if (a == null) {
         return null;
       } else {
-        final double k = 1.0 - t;
+        final k = 1.0 - t;
         return SmoothRadius(
           cornerRadius: a.cornerRadius * k,
           cornerSmoothing: a.cornerSmoothing * k,
@@ -166,10 +170,8 @@ class SmoothRadius extends Radius {
   int get hashCode => Object.hash(cornerRadius, cornerSmoothing);
 
   @override
-  String toString() {
-    return 'SmoothRadius('
-        'cornerRadius: ${cornerRadius.toStringAsFixed(2)},'
-        'cornerSmoothing: ${cornerSmoothing.toStringAsFixed(2)},'
-        ')';
-  }
+  String toString() => 'SmoothRadius('
+      'cornerRadius: ${cornerRadius.toStringAsFixed(2)}, '
+      'cornerSmoothing: ${cornerSmoothing.toStringAsFixed(2)},      '
+      ')';
 }

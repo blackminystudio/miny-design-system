@@ -1,15 +1,15 @@
 // GENERATED FILE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../tokens/spacing_tokens.dart';
 
 class MinySpacing extends ThemeExtension<MinySpacing> {
-  final SpacingDimensions width;
-  final SpacingDimensions height;
-
   MinySpacing()
       : width = SpacingDimensions(scale: (value) => value.w),
         height = SpacingDimensions(scale: (value) => value.h);
+  final SpacingDimensions width;
+  final SpacingDimensions height;
 
   @override
   MinySpacing copyWith({
@@ -26,8 +26,8 @@ class MinySpacing extends ThemeExtension<MinySpacing> {
 }
 
 class SpacingDimensions {
-  final double Function(double) scale;
   SpacingDimensions({required this.scale});
+  final double Function(double) scale;
   double get s0 => scale(SpacingTokens.s0);
   double get s1 => scale(SpacingTokens.s1);
   double get s2 => scale(SpacingTokens.s2);

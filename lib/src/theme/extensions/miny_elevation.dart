@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+
 import '../../tokens/elevation_tokens.dart';
 
 class MinyElevation extends ThemeExtension<MinyElevation> {
-  final BoxShadow e1;
-
   const MinyElevation({
     this.e1 = ElevationTokens.e1,
   });
+  final BoxShadow e1;
 
   @override
   MinyElevation copyWith({

@@ -27,12 +27,10 @@ class SmoothRectangleBorder extends OutlinedBorder {
   EdgeInsetsGeometry get dimensions => EdgeInsets.all(side.width);
 
   @override
-  ShapeBorder scale(double t) {
-    return SmoothRectangleBorder(
-      side: side.scale(t),
-      borderRadius: borderRadius * t,
-    );
-  }
+  ShapeBorder scale(double t) => SmoothRectangleBorder(
+        side: side.scale(t),
+        borderRadius: borderRadius * t,
+      );
 
   @override
   ShapeBorder? lerpFrom(ShapeBorder? a, double t) {
@@ -147,13 +145,12 @@ class SmoothRectangleBorder extends OutlinedBorder {
     BorderSide? side,
     SmoothBorderRadius? borderRadius,
     BorderAlign? borderAlign,
-  }) {
-    return SmoothRectangleBorder(
-      side: side ?? this.side,
-      borderRadius: borderRadius ?? this.borderRadius,
-      borderAlign: borderAlign ?? this.borderAlign,
-    );
-  }
+  }) =>
+      SmoothRectangleBorder(
+        side: side ?? this.side,
+        borderRadius: borderRadius ?? this.borderRadius,
+        borderAlign: borderAlign ?? this.borderAlign,
+      );
 
   @override
   void paint(Canvas canvas, Rect rect, {TextDirection? textDirection}) {
@@ -188,7 +185,7 @@ class SmoothRectangleBorder extends OutlinedBorder {
   int get hashCode => Object.hash(side, borderRadius, borderAlign);
 
   @override
-  String toString() {
-    return '${objectRuntimeType(this, 'SmoothRectangleBorder')}($side, $borderRadius, $borderAlign)';
-  }
+  String toString() =>
+      '${objectRuntimeType(this, 'SmoothRectangleBorder')}($side, '
+      '$borderRadius, $borderAlign)';
 }

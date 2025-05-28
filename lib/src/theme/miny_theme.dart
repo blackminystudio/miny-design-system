@@ -13,42 +13,40 @@ import 'src/themedata.dart';
 export 'miny_icons.dart';
 
 class MinyTheme {
-  static ThemeData get lightTheme {
-    return ThemeData(
-      textTheme: TextTheme(
-        // Display Styles
-        displayLarge: MinyTypography().headingXxlarge,
-        displayMedium: MinyTypography().headingXlarge,
-        displaySmall: MinyTypography().headingLarge,
+  static ThemeData get lightTheme => ThemeData(
+        textTheme: TextTheme(
+          // Display Styles
+          displayLarge: MinyTypography().headingXxlarge,
+          displayMedium: MinyTypography().headingXlarge,
+          displaySmall: MinyTypography().headingLarge,
 
-        // Headline Styles
-        headlineLarge: MinyTypography().headingMedium,
-        headlineMedium: MinyTypography().headingSmall,
-        headlineSmall: MinyTypography().headingXsmall,
+          // Headline Styles
+          headlineLarge: MinyTypography().headingMedium,
+          headlineMedium: MinyTypography().headingSmall,
+          headlineSmall: MinyTypography().headingXsmall,
 
-        // Title Styles
-        titleLarge: MinyTypography().headingXxsmall,
-        titleMedium: MinyTypography().bodyXxlarge,
-        titleSmall: MinyTypography().bodyXlarge,
+          // Title Styles
+          titleLarge: MinyTypography().headingXxsmall,
+          titleMedium: MinyTypography().bodyXxlarge,
+          titleSmall: MinyTypography().bodyXlarge,
 
-        // Body Styles
-        bodyLarge: MinyTypography().bodyLarge,
-        bodyMedium: MinyTypography().bodyMedium,
-        bodySmall: MinyTypography().bodySmall,
+          // Body Styles
+          bodyLarge: MinyTypography().bodyLarge,
+          bodyMedium: MinyTypography().bodyMedium,
+          bodySmall: MinyTypography().bodySmall,
 
-        // Label Styles
-        labelLarge: MinyTypography().bodyXsmall,
-        labelMedium: MinyTypography().bodyXxsmall,
-        labelSmall: MinyTypography().bodyXxsmall,
-      ),
-      chipTheme: chipThemeData,
-      indicatorColor: Colors.white,
-      elevatedButtonTheme: elevatedButtonThemeData,
-      progressIndicatorTheme: progressIndicatorThemeData,
-      extensions: themeExtentions,
-      inputDecorationTheme: inputDecoration,
-    );
-  }
+          // Label Styles
+          labelLarge: MinyTypography().bodyXsmall,
+          labelMedium: MinyTypography().bodyXxsmall,
+          labelSmall: MinyTypography().bodyXxsmall,
+        ),
+        chipTheme: chipThemeData,
+        indicatorColor: Colors.white,
+        elevatedButtonTheme: elevatedButtonThemeData,
+        progressIndicatorTheme: progressIndicatorThemeData,
+        extensions: themeExtentions,
+        inputDecorationTheme: inputDecoration,
+      );
 }
 
 // THEME EXTENTIONS

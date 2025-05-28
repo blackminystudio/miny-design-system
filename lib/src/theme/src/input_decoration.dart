@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:miny_design_system/miny_design_system.dart';
+
+import '../../../miny_design_system.dart';
 
 final _theme = ThemeData();
 
@@ -26,13 +27,12 @@ final _squircleBorder = SmoothInputBorder(
   border: SmoothRectangleBorder(
     side: BorderSide(
       // TODO: Color Token
-      color: Color(0xffE7E5E7),
+      color: const Color(0xffE7E5E7),
       width: _theme.sizing.width.half,
     ),
     borderRadius: SmoothBorderRadius(
       cornerRadius: _theme.borderradius.medium,
       cornerSmoothing: 1,
     ),
-    borderAlign: BorderAlign.inside,
   ),
 );

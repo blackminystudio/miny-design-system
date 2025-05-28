@@ -1,32 +1,9 @@
 // GENERATED FILE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
+
 import '../../tokens/color_tokens.dart';
 
 class MinyColors extends ThemeExtension<MinyColors> {
-  final Color textPrimary;
-  final Color textSecondary;
-  final Color textSecondarylight;
-  final Color textAccentBlueText;
-  final Color textAccentPurpleText;
-  final Color textAccentGreenText;
-  final Color neutralBackground;
-  final Color neutralBorder;
-  final Color neutralLight;
-  final Color neutralLightBackground;
-  final Color accentPurple;
-  final Color accentPurpleAlpha;
-  final Color accentBlue;
-  final Color accentBlueAlpha;
-  final Color accentRed;
-  final Color accentRedAlpha;
-  final Color accentYellow;
-  final Color accentYellowAlpha;
-  final Color accentGreen;
-  final Color accentGreenAlpha;
-  final LinearGradient gradientDark;
-  final LinearGradient gradientPurple;
-  final LinearGradient gradientBlue;
-
   const MinyColors({
     this.textPrimary = ColorTokens.textPrimary,
     this.textSecondary = ColorTokens.textSecondary,
@@ -52,6 +29,29 @@ class MinyColors extends ThemeExtension<MinyColors> {
     this.gradientPurple = ColorTokens.gradientPurple,
     this.gradientBlue = ColorTokens.gradientBlue,
   });
+  final Color textPrimary;
+  final Color textSecondary;
+  final Color textSecondarylight;
+  final Color textAccentBlueText;
+  final Color textAccentPurpleText;
+  final Color textAccentGreenText;
+  final Color neutralBackground;
+  final Color neutralBorder;
+  final Color neutralLight;
+  final Color neutralLightBackground;
+  final Color accentPurple;
+  final Color accentPurpleAlpha;
+  final Color accentBlue;
+  final Color accentBlueAlpha;
+  final Color accentRed;
+  final Color accentRedAlpha;
+  final Color accentYellow;
+  final Color accentYellowAlpha;
+  final Color accentGreen;
+  final Color accentGreenAlpha;
+  final LinearGradient gradientDark;
+  final LinearGradient gradientPurple;
+  final LinearGradient gradientBlue;
 
   @override
   MinyColors copyWith({

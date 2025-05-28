@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:miny_design_system/miny_design_system.dart';
+
+import '../../../miny_design_system.dart';
 
 final _theme = ThemeData();
 final elevatedButtonThemeData = ElevatedButtonThemeData(
@@ -30,7 +31,7 @@ final elevatedButtonThemeData = ElevatedButtonThemeData(
     ),
     enableFeedback: true,
     elevation: WidgetStateProperty.all(0),
-    overlayColor: WidgetStateProperty.all(Color(0xff7F7D80)),
+    overlayColor: WidgetStateProperty.all(const Color(0xff7F7D80)),
     splashFactory: InkRipple.splashFactory,
     shape: WidgetStateProperty.all(
       SmoothRectangleBorder(

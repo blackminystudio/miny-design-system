@@ -19,31 +19,47 @@ Future<void> main() async {
   }
 
   final rawJson = inputFile.readAsStringSync();
-  final Map<String, dynamic> json = jsonDecode(rawJson);
+  final json = jsonDecode(rawJson) as Map<String, dynamic>;
 
   final tokens = json['global'] as Map<String, dynamic>;
 
   // Token Generators
 
-  await generateColors(tokens['color']);
-  await generateSpacing(tokens['spacing']);
-  await generateSizing(tokens['sizing']);
-  await generateTypography(tokens['typography']);
-  await generateOpacity(tokens['opacity']);
-  await generateElevation(tokens['elevation']);
-  await generateBorderRadius(tokens['borderRadius']);
-  await generateBorderWidth(tokens['borderWidth']);
+  await generateColors(tokens['color'] as Map<String, dynamic>);
+  await generateSpacing(tokens['spacing'] as Map<String, dynamic>);
+  await generateSizing(tokens['sizing'] as Map<String, dynamic>);
+  await generateTypography(tokens['typography'] as Map<String, dynamic>);
+  await generateOpacity(tokens['opacity'] as Map<String, dynamic>);
+  await generateElevation(tokens['elevation'] as Map<String, dynamic>);
+  await generateBorderRadius(tokens['borderRadius'] as Map<String, dynamic>);
+  await generateBorderWidth(tokens['borderWidth'] as Map<String, dynamic>);
   log('✅ All tokens generated successfully!');
 
   // Extentions Generators
 
-  await generateColorsExtension(tokens['color']);
-  await generateSpacingExtension(tokens['spacing']);
-  await generateSizingExtension(tokens['sizing']);
-  await generateTypographyExtension(tokens['typography']);
-  await generateOpacityExtension(tokens['opacity']);
-  await generateElevationExtension(tokens['elevation']);
-  await generateBorderRadiusExtension(tokens['borderRadius']);
-  await generateBorderWidthExtension(tokens['borderWidth']);
+  await generateColorsExtension(
+    tokens['color'] as Map<String, dynamic>,
+  );
+  await generateSpacingExtension(
+    tokens['spacing'] as Map<String, dynamic>,
+  );
+  await generateSizingExtension(
+    tokens['sizing'] as Map<String, dynamic>,
+  );
+  await generateTypographyExtension(
+    tokens['typography'] as Map<String, dynamic>,
+  );
+  await generateOpacityExtension(
+    tokens['opacity'] as Map<String, dynamic>,
+  );
+  await generateElevationExtension(
+    tokens['elevation'] as Map<String, dynamic>,
+  );
+  await generateBorderRadiusExtension(
+    tokens['borderRadius'] as Map<String, dynamic>,
+  );
+  await generateBorderWidthExtension(
+    tokens['borderWidth'] as Map<String, dynamic>,
+  );
   log('✅ All extensions generated successfully!');
 }

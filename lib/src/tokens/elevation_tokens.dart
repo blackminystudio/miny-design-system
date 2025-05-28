@@ -6,6 +6,5 @@ class ElevationTokens {
     color: Color(0x43FFFFFF),
     offset: Offset(0, 5),
     blurRadius: 5,
-    spreadRadius: 0,
   );
 }
