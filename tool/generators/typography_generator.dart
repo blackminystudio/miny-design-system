@@ -11,7 +11,8 @@ Future<void> generateTypography(Map<String, dynamic> typographyTokens) async {
 
   void addStyles(String groupName, Map<String, dynamic> groupTokens) {
     groupTokens.forEach((key, token) {
-      final value = token['value'];
+      final value =
+          (token as Map<String, dynamic>)['value'] as Map<String, dynamic>;
       final fontFamily = value['fontFamily'];
       final fontSize = value['fontSize'];
       final lineHeight = value['lineHeight'];
@@ -92,7 +93,8 @@ Future<void> generateTypographyExtension(
     // lerp
     ..writeln('\n  @override')
     ..writeln(
-        '  MinyTypography lerp(ThemeExtension<MinyTypography>? other, double t){')
+      '  MinyTypography lerp(ThemeExtension<MinyTypography>? other, double t){',
+    )
     ..writeln('    if (other is! MinyTypography) return this;')
     ..writeln('    return MinyTypography(');
   for (final key in keys) {

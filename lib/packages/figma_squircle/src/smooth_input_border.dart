@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 import 'smooth_rectangle_border.dart';
 
 class SmoothInputBorder extends InputBorder {
-  final SmoothRectangleBorder border;
-
   SmoothInputBorder({
     required this.border,
   }) : super(borderSide: border.side);
+  final SmoothRectangleBorder border;
 
   @override
   bool get isOutline => true;
@@ -16,14 +15,12 @@ class SmoothInputBorder extends InputBorder {
   EdgeInsetsGeometry get dimensions => EdgeInsets.all(border.side.width);
 
   @override
-  Path getOuterPath(Rect rect, {TextDirection? textDirection}) {
-    return border.getOuterPath(rect, textDirection: textDirection);
-  }
+  Path getOuterPath(Rect rect, {TextDirection? textDirection}) =>
+      border.getOuterPath(rect, textDirection: textDirection);
 
   @override
-  Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
-    return border.getInnerPath(rect, textDirection: textDirection);
-  }
+  Path getInnerPath(Rect rect, {TextDirection? textDirection}) =>
+      border.getInnerPath(rect, textDirection: textDirection);
 
   @override
   void paint(Canvas canvas, Rect rect,
@@ -35,14 +32,11 @@ class SmoothInputBorder extends InputBorder {
   }
 
   @override
-  SmoothInputBorder copyWith({BorderSide? borderSide}) {
-    return SmoothInputBorder(
-      border: border.copyWith(side: borderSide ?? border.side),
-    );
-  }
+  SmoothInputBorder copyWith({BorderSide? borderSide}) => SmoothInputBorder(
+        border: border.copyWith(side: borderSide ?? border.side),
+      );
 
   @override
-  ShapeBorder scale(double t) {
-    return SmoothInputBorder(border: border.scale(t) as SmoothRectangleBorder);
-  }
+  ShapeBorder scale(double t) =>
+      SmoothInputBorder(border: border.scale(t) as SmoothRectangleBorder);
 }

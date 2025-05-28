@@ -1,15 +1,15 @@
 // GENERATED FILE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../tokens/sizing_tokens.dart';
 
 class MinySizing extends ThemeExtension<MinySizing> {
-  final SizingDimensions width;
-  final SizingDimensions height;
-
   MinySizing()
       : width = SizingDimensions(scale: (value) => value.w),
         height = SizingDimensions(scale: (value) => value.h);
+  final SizingDimensions width;
+  final SizingDimensions height;
 
   @override
   MinySizing copyWith({
@@ -26,8 +26,8 @@ class MinySizing extends ThemeExtension<MinySizing> {
 }
 
 class SizingDimensions {
-  final double Function(double) scale;
   SizingDimensions({required this.scale});
+  final double Function(double) scale;
   double get s2 => scale(SizingTokens.s2);
   double get s3 => scale(SizingTokens.s3);
   double get s4 => scale(SizingTokens.s4);

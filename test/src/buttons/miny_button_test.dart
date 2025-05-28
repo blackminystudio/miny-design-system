@@ -10,7 +10,7 @@ void main() {
     testWidgets(
         'Given isLoading is true '
         'When MinyButton is rendered '
-        'Then button should be null and CircularProgressIndicator should be shown ',
+        'Then button should be null and ProgressIndicator should be shown ',
         (WidgetTester tester) async {
       await pumpMinyWidgets(
         tester,
@@ -81,7 +81,7 @@ void main() {
       testWidgets(
           'Given enableIcon is true, and isLoading is false '
           'When MinyButton is rendered '
-          'Then it should display a default icon image, SizedBox, and the label',
+          'Then it should display a default icon image, SizedBox, and label',
           (WidgetTester tester) async {
         await pumpMinyWidgets(
           tester,
@@ -102,7 +102,7 @@ void main() {
       testWidgets(
           'Given a custom iconPath, enableIcon is true, and isLoading is false '
           'When MinyButton is rendered '
-          'Then it should display the custom icon image, SizedBox, and the label',
+          'Then it should display the custom icon image, SizedBox, and label',
           (WidgetTester tester) async {
         await pumpMinyWidgets(
           tester,

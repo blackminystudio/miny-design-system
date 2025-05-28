@@ -1,23 +1,9 @@
 // GENERATED FILE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
+
 import '../../tokens/typography_tokens.dart';
 
 class MinyTypography extends ThemeExtension<MinyTypography> {
-  final TextStyle bodyXxsmall;
-  final TextStyle bodyXsmall;
-  final TextStyle bodySmall;
-  final TextStyle bodyMedium;
-  final TextStyle bodyLarge;
-  final TextStyle bodyXlarge;
-  final TextStyle bodyXxlarge;
-  final TextStyle headingXxsmall;
-  final TextStyle headingXsmall;
-  final TextStyle headingSmall;
-  final TextStyle headingMedium;
-  final TextStyle headingLarge;
-  final TextStyle headingXlarge;
-  final TextStyle headingXxlarge;
-
   MinyTypography({
     TextStyle? bodyXxsmall,
     TextStyle? bodyXsmall,
@@ -47,6 +33,20 @@ class MinyTypography extends ThemeExtension<MinyTypography> {
         headingLarge = headingLarge ?? TypographyTokens.headingLarge,
         headingXlarge = headingXlarge ?? TypographyTokens.headingXlarge,
         headingXxlarge = headingXxlarge ?? TypographyTokens.headingXxlarge;
+  final TextStyle bodyXxsmall;
+  final TextStyle bodyXsmall;
+  final TextStyle bodySmall;
+  final TextStyle bodyMedium;
+  final TextStyle bodyLarge;
+  final TextStyle bodyXlarge;
+  final TextStyle bodyXxlarge;
+  final TextStyle headingXxsmall;
+  final TextStyle headingXsmall;
+  final TextStyle headingSmall;
+  final TextStyle headingMedium;
+  final TextStyle headingLarge;
+  final TextStyle headingXlarge;
+  final TextStyle headingXxlarge;
 
   @override
   MinyTypography copyWith({

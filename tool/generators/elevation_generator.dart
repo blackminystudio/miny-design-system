@@ -4,19 +4,21 @@ import 'dart:io';
 Future<void> generateElevation(Map<String, dynamic> elevationTokens) async {
   final buffer = StringBuffer()
     ..writeln('// GENERATED FILE - DO NOT MODIFY BY HAND')
-    ..writeln("import 'package:flutter/material.dart';")
-    ..writeln()
+    ..writeln("import 'package:flutter/material.dart';\n")
     ..writeln('class ElevationTokens {');
 
   elevationTokens.forEach((key, value) {
-    final shadows = value['value'];
+    final map = value as Map<String, dynamic>;
+    final shadows = map['value'];
+
     if (shadows is List && shadows.isNotEmpty) {
-      final shadow = shadows.first;
+      final shadow = shadows.first as Map<String, dynamic>;
       final color = parseShadowColor(shadow['color'] as String);
       final x = shadow['x'];
       final y = shadow['y'];
       final blur = shadow['blur'];
       final spread = shadow['spread'];
+
       buffer
         ..writeln('  static const BoxShadow $key = BoxShadow(')
         ..writeln('    color: $color,')
@@ -27,7 +29,9 @@ Future<void> generateElevation(Map<String, dynamic> elevationTokens) async {
     }
   });
 
-  buffer.writeln('}');
+  buffer
+    ..writeln('}')
+    ..writeln();
 
   final file = File('lib/src/tokens/elevation_tokens.dart');
   await file.writeAsString(buffer.toString());
@@ -36,11 +40,12 @@ Future<void> generateElevation(Map<String, dynamic> elevationTokens) async {
 }
 
 Future<void> generateElevationExtension(
-    Map<String, dynamic> elevationTokens) async {
+  Map<String, dynamic> elevationTokens,
+) async {
   final buffer = StringBuffer()
+    ..writeln('// GENERATED FILE - DO NOT MODIFY BY HAND')
     ..writeln("import 'package:flutter/material.dart';")
-    ..writeln("import '../../tokens/elevation_tokens.dart';")
-    ..writeln()
+    ..writeln("import '../../tokens/elevation_tokens.dart';\n")
     ..writeln('class MinyElevation extends ThemeExtension<MinyElevation> {');
 
   // Fields
@@ -48,36 +53,28 @@ Future<void> generateElevationExtension(
     buffer.writeln('  final BoxShadow $key;');
   }
 
-  buffer
-    ..writeln()
-    ..writeln('  const MinyElevation({');
+  // Constructor
+  buffer.writeln('\n  const MinyElevation({');
   for (final key in elevationTokens.keys) {
     buffer.writeln('    this.$key = ElevationTokens.$key,');
   }
   buffer
     ..writeln('  });')
-
-    // copyWith
-    ..writeln()
-    ..writeln('  @override')
+    ..writeln('\n  @override')
     ..writeln('  MinyElevation copyWith({');
   for (final key in elevationTokens.keys) {
     buffer.writeln('    BoxShadow? $key,');
   }
-  buffer
-    ..writeln('  }) =>')
-    ..writeln('      MinyElevation(');
+  buffer.writeln('  }) => MinyElevation(');
   for (final key in elevationTokens.keys) {
-    buffer.writeln('        $key: $key ?? this.$key,');
+    buffer.writeln('    $key: $key ?? this.$key,');
   }
   buffer
-    ..writeln('      );')
-
-    // lerp
-    ..writeln()
-    ..writeln('  @override')
+    ..writeln('  );')
+    ..writeln('\n  @override')
     ..writeln(
-        '  MinyElevation lerp(ThemeExtension<MinyElevation>? other, double t){')
+      '  MinyElevation lerp(ThemeExtension<MinyElevation>? other, double t) {',
+    )
     ..writeln('    if (other is! MinyElevation) return this;')
     ..writeln('    return MinyElevation(');
   for (final key in elevationTokens.keys) {

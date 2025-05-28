@@ -1,21 +1,10 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
+
 import '../../tokens/opacity_tokens.dart';
 
 class MinyOpacity extends ThemeExtension<MinyOpacity> {
-  final double o4;
-  final double o5;
-  final double o8;
-  final double o11;
-  final double o12;
-  final double o14;
-  final double o24;
-  final double o38;
-  final double o40;
-  final double o48;
-  final double o60;
-  final double o72;
-
   const MinyOpacity({
     this.o4 = OpacityTokens.o4,
     this.o5 = OpacityTokens.o5,
@@ -30,6 +19,18 @@ class MinyOpacity extends ThemeExtension<MinyOpacity> {
     this.o60 = OpacityTokens.o60,
     this.o72 = OpacityTokens.o72,
   });
+  final double o4;
+  final double o5;
+  final double o8;
+  final double o11;
+  final double o12;
+  final double o14;
+  final double o24;
+  final double o38;
+  final double o40;
+  final double o48;
+  final double o60;
+  final double o72;
 
   @override
   MinyOpacity copyWith({

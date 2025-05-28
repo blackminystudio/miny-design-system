@@ -23,24 +23,18 @@ class ColorTokens {
   static const Color accentGreen = Color(0xFF13A700);
   static const Color accentGreenAlpha = Color(0x1A13A700);
   static const LinearGradient gradientDark = LinearGradient(
-    begin: Alignment.centerLeft,
-    end: Alignment.centerRight,
     colors: [
       Color.fromRGBO(48, 48, 48, 1.00),
       Color.fromRGBO(28, 28, 28, 1.00)
     ],
   );
   static const LinearGradient gradientPurple = LinearGradient(
-    begin: Alignment.centerLeft,
-    end: Alignment.centerRight,
     colors: [
       Color.fromRGBO(145, 108, 255, 0.80),
       Color.fromRGBO(145, 108, 255, 0.01)
     ],
   );
   static const LinearGradient gradientBlue = LinearGradient(
-    begin: Alignment.centerLeft,
-    end: Alignment.centerRight,
     colors: [
       Color.fromRGBO(0, 144, 255, 0.80),
       Color.fromRGBO(0, 144, 255, 0.01)

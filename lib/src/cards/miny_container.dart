@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:miny_design_system/miny_design_system.dart';
+
+import '../../miny_design_system.dart';
 
 class MinyContainer extends StatelessWidget {
+  const MinyContainer({
+    required this.child,
+    super.key,
+    this.padding,
+    this.borderSide,
+    this.borderRadius,
+    this.backgroundColor,
+    this.hasCornerSmoothness = true,
+  });
   final Widget child;
   final Color? backgroundColor;
   final double? borderRadius;
   final BorderSide? borderSide;
   final EdgeInsetsGeometry? padding;
   final bool hasCornerSmoothness;
-  const MinyContainer({
-    super.key,
-    this.padding,
-    this.borderSide,
-    this.borderRadius,
-    required this.child,
-    this.backgroundColor,
-    this.hasCornerSmoothness = true,
-  });
 
   @override
   Widget build(BuildContext context) {

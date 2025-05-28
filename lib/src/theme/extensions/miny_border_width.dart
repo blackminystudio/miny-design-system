@@ -1,19 +1,20 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
+
 import '../../tokens/border_width_tokens.dart';
 
 class MinyBorderWidth extends ThemeExtension<MinyBorderWidth> {
-  final double none;
-  final double small;
-  final double medium;
-  final double large;
-
   const MinyBorderWidth({
     this.none = BorderWidthTokens.none,
     this.small = BorderWidthTokens.small,
     this.medium = BorderWidthTokens.medium,
     this.large = BorderWidthTokens.large,
   });
+  final double none;
+  final double small;
+  final double medium;
+  final double large;
 
   @override
   MinyBorderWidth copyWith({

@@ -37,16 +37,29 @@ Future<void> main() async {
 
   // Extentions Generators
 
-  await generateColorsExtension(tokens['color'] as Map<String, dynamic>);
-  await generateSpacingExtension(tokens['spacing'] as Map<String, dynamic>);
-  await generateSizingExtension(tokens['sizing'] as Map<String, dynamic>);
+  await generateColorsExtension(
+    tokens['color'] as Map<String, dynamic>,
+  );
+  await generateSpacingExtension(
+    tokens['spacing'] as Map<String, dynamic>,
+  );
+  await generateSizingExtension(
+    tokens['sizing'] as Map<String, dynamic>,
+  );
   await generateTypographyExtension(
-      tokens['typography'] as Map<String, dynamic>);
-  await generateOpacityExtension(tokens['opacity'] as Map<String, dynamic>);
-  await generateElevationExtension(tokens['elevation'] as Map<String, dynamic>);
+    tokens['typography'] as Map<String, dynamic>,
+  );
+  await generateOpacityExtension(
+    tokens['opacity'] as Map<String, dynamic>,
+  );
+  await generateElevationExtension(
+    tokens['elevation'] as Map<String, dynamic>,
+  );
   await generateBorderRadiusExtension(
-      tokens['borderRadius'] as Map<String, dynamic>);
+    tokens['borderRadius'] as Map<String, dynamic>,
+  );
   await generateBorderWidthExtension(
-      tokens['borderWidth'] as Map<String, dynamic>);
+    tokens['borderWidth'] as Map<String, dynamic>,
+  );
   log('✅ All extensions generated successfully!');
 }

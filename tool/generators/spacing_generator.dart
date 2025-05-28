@@ -2,61 +2,55 @@ import 'dart:developer';
 import 'dart:io';
 
 Future<void> generateSpacing(Map<String, dynamic> spacingTokens) async {
-  final buffer = StringBuffer();
-  buffer.writeln('// GENERATED FILE - DO NOT MODIFY BY HAND');
-  buffer.writeln('');
-  buffer.writeln('class SpacingTokens {');
+  final buffer = StringBuffer()
+    ..writeln('// GENERATED FILE - DO NOT MODIFY BY HAND\n')
+    ..writeln('class SpacingTokens {');
 
   spacingTokens.forEach((key, value) {
-    final val = value['value'].toString();
+    final map = value as Map<String, dynamic>;
+    final val = map['value'].toString();
     buffer.writeln('  static const double $key = $val;');
   });
 
-  buffer.writeln('}');
-
+  buffer
+    ..writeln('}')
+    ..writeln(); // Ensures a trailing newline
   final file = File('lib/src/tokens/spacing_tokens.dart');
   await file.writeAsString(buffer.toString());
+
   log('✅ Generated spacing_tokens.dart');
 }
 
 Future<void> generateSpacingExtension(
-    Map<String, dynamic> spacingTokens) async {
-  final buffer = StringBuffer();
-
-  buffer.writeln('// GENERATED FILE - DO NOT MODIFY BY HAND');
-  buffer.writeln("import 'package:flutter/material.dart';");
-  buffer
-      .writeln("import 'package:flutter_screenutil/flutter_screenutil.dart';");
-  buffer.writeln("import '../../tokens/spacing_tokens.dart';\n");
-
-  buffer.writeln('class MinySpacing extends ThemeExtension<MinySpacing> {');
-  buffer.writeln('  final SpacingDimensions width;');
-  buffer.writeln('  final SpacingDimensions height;\n');
-
-  buffer.writeln('  MinySpacing()');
-  buffer
-      .writeln('      : width = SpacingDimensions(scale: (value) => value.w),');
-  buffer.writeln(
-      '        height = SpacingDimensions(scale: (value) => value.h);\n');
-
-  buffer.writeln('  @override');
-  buffer.writeln('  MinySpacing copyWith({');
-  buffer.writeln('    SpacingDimensions? width,');
-  buffer.writeln('    SpacingDimensions? height,');
-  buffer.writeln('  }) => MinySpacing();\n');
-
-  buffer.writeln('  @override');
-  buffer.writeln(
-      '  MinySpacing lerp(ThemeExtension<MinySpacing>? other, double t) {');
-  buffer.writeln('    if (other is! MinySpacing) return this;');
-  buffer.writeln('    return MinySpacing();');
-  buffer.writeln('  }\n');
-
-  buffer.writeln('}\n');
-
-  buffer.writeln('class SpacingDimensions {');
-  buffer.writeln('  final double Function(double) scale;');
-  buffer.writeln('  SpacingDimensions({required this.scale});');
+  Map<String, dynamic> spacingTokens,
+) async {
+  final buffer = StringBuffer()
+    ..writeln('// GENERATED FILE - DO NOT MODIFY BY HAND')
+    ..writeln("import 'package:flutter/material.dart';")
+    ..writeln("import 'package:flutter_screenutil/flutter_screenutil.dart';")
+    ..writeln("import '../../tokens/spacing_tokens.dart';\n")
+    ..writeln('class MinySpacing extends ThemeExtension<MinySpacing> {')
+    ..writeln('  final SpacingDimensions width;')
+    ..writeln('  final SpacingDimensions height;\n')
+    ..writeln('  MinySpacing()')
+    ..writeln('      : width = SpacingDimensions(scale: (value) => value.w),')
+    ..writeln(
+        '        height = SpacingDimensions(scale: (value) => value.h);\n')
+    ..writeln('  @override')
+    ..writeln('  MinySpacing copyWith({')
+    ..writeln('    SpacingDimensions? width,')
+    ..writeln('    SpacingDimensions? height,')
+    ..writeln('  }) => MinySpacing();\n')
+    ..writeln('  @override')
+    ..writeln(
+        '  MinySpacing lerp(ThemeExtension<MinySpacing>? other, double t) {')
+    ..writeln('    if (other is! MinySpacing) return this;')
+    ..writeln('    return MinySpacing();')
+    ..writeln('  }\n')
+    ..writeln('}\n')
+    ..writeln('class SpacingDimensions {')
+    ..writeln('  final double Function(double) scale;')
+    ..writeln('  SpacingDimensions({required this.scale});');
 
   for (final key in spacingTokens.keys) {
     buffer.writeln('  double get $key => scale(SpacingTokens.$key);');
@@ -66,5 +60,6 @@ Future<void> generateSpacingExtension(
 
   final file = File('lib/src/theme/extensions/miny_spacing.dart');
   await file.writeAsString(buffer.toString());
+
   log('✅ Generated miny_spacing.dart');
 }

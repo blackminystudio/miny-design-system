@@ -1,4 +1,5 @@
 import 'dart:math' as math;
+
 import 'package:vector_math/vector_math.dart' as vector;
 
 import 'smooth_radius.dart';
@@ -9,18 +10,6 @@ import 'smooth_radius.dart';
 // The original code
 // https://github.com/MartinRGB/Figma_Squircles_Approximation/blob/bf29714aab58c54329f3ca130ffa16d39a2ff08c/js/rounded-corners.js#L64
 class ProcessedSmoothRadius {
-  const ProcessedSmoothRadius._({
-    required this.a,
-    required this.b,
-    required this.c,
-    required this.d,
-    required this.p,
-    required this.width,
-    required this.height,
-    required this.radius,
-    required this.circularSectionLength,
-  });
-
   factory ProcessedSmoothRadius(
     SmoothRadius radius, {
     required double width,
@@ -44,7 +33,8 @@ class ProcessedSmoothRadius {
       // When `cornerRadius` is larger and `maxRadius / 2`,
       // these angles also depend on `cornerRadius` and `maxRadius / 2`
       //
-      // I did a few tests in Figma and this code generated similar but not identical results
+      // I did a few tests in Figma and this code generated similar
+      // but not identical results
       // `diffRatio` was called `change_percentage` in the orignal code
       final diffRatio = (cornerRadius - maxRadius / 2) / (maxRadius / 2);
 
@@ -81,6 +71,17 @@ class ProcessedSmoothRadius {
       circularSectionLength: circularSectionLength,
     );
   }
+  const ProcessedSmoothRadius._({
+    required this.a,
+    required this.b,
+    required this.c,
+    required this.d,
+    required this.p,
+    required this.width,
+    required this.height,
+    required this.radius,
+    required this.circularSectionLength,
+  });
 
   final SmoothRadius radius;
   final double a;
@@ -111,16 +112,14 @@ class ProcessedSmoothRadius {
   int get hashCode => radius.hashCode;
 
   @override
-  String toString() {
-    return 'ProcessedSmoothRadius('
-        'radius: $radius,'
-        'a: ${a.toStringAsFixed(2)},'
-        'b: ${b.toStringAsFixed(2)},'
-        'c: ${c.toStringAsFixed(2)},'
-        'd: ${d.toStringAsFixed(2)},'
-        'p: ${p.toStringAsFixed(2)},'
-        'width: ${width.toStringAsFixed(2)},'
-        'height: ${height.toStringAsFixed(2)},'
-        ')';
-  }
+  String toString() => 'ProcessedSmoothRadius('
+      'radius: $radius, '
+      'a: ${a.toStringAsFixed(2)}, '
+      'b: ${b.toStringAsFixed(2)}, '
+      'c: ${c.toStringAsFixed(2)}, '
+      'd: ${d.toStringAsFixed(2)}, '
+      'p: ${p.toStringAsFixed(2)}, '
+      'width: ${width.toStringAsFixed(2)}, '
+      'height: ${height.toStringAsFixed(2)}, '
+      ')';
 }

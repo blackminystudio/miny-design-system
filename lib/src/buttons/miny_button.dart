@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:miny_design_system/miny_design_system.dart';
-import 'package:miny_design_system/utilities/constants.dart';
+
+import '../../miny_design_system.dart';
+import '../../utilities/constants.dart';
 
 /// A custom button for Miny Design System.
 class MinyButton extends StatelessWidget {
-  final String label;
-  final VoidCallback? onPressed;
-  final bool isLoading;
-  final bool enableIcon;
-  final String? iconPath;
-
   const MinyButton({
-    super.key,
     required this.label,
+    super.key,
     this.onPressed,
     this.isLoading = false,
     this.iconPath,
     this.enableIcon = false,
   });
+  final String label;
+  final VoidCallback? onPressed;
+  final bool isLoading;
+  final bool enableIcon;
+  final String? iconPath;
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +25,11 @@ class MinyButton extends StatelessWidget {
 
     return ElevatedButton(
       onPressed: isLoading ? null : onPressed,
-      style: ButtonStyle().copyWith(
+      style: const ButtonStyle().copyWith(
         backgroundColor: isLoading
             // TODO: DS Add into token
             ? WidgetStateProperty.all(
-                Color(0xff757376),
+                const Color(0xff757376),
               )
             : null,
       ),
