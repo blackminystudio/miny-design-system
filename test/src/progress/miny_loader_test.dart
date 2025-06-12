@@ -2,75 +2,71 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:miny_design_system/miny_design_system.dart';
 
+import '../../Utils/test/Utils/helper_methods.dart';
+
 void main() {
-  group('MinyLoader Widget Test', () {
-    testWidgets(
-        'Should display CircularProgressIndicator with default size and color',
-        (WidgetTester tester) async {
-      // Arrange: Build the widget.
-      await tester.pumpWidget(
-        const MaterialApp(
-          home: Scaffold(
-            body: MinyLoader(),
-          ),
+  testWidgets(
+      'Given an empty values '
+      'When MinyLoader is rendered '
+      'Then it should display a CircularProgressIndicator with default values ',
+      (WidgetTester tester) async {
+    await pumpMinyWidgets(
+      tester,
+      child: const MinyLoader(),
+    );
+
+    final sizedBox = tester.widget(find.byType(SizedBox)) as SizedBox;
+    final loader = tester.widget<CircularProgressIndicator>(
+      find.byType(CircularProgressIndicator),
+    );
+    expect(sizedBox.width, 24.0);
+    expect(sizedBox.height, 24.0);
+    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+    expect(
+      (loader.valueColor as AlwaysStoppedAnimation).value,
+      equals(Colors.blue),
+    );
+    expect(loader.strokeWidth, equals(3.0));
+  });
+  testWidgets(
+      'Given a valueColor '
+      'When MinyLoader is rendered '
+      'Then it should display with the specified color',
+      (WidgetTester tester) async {
+    final customColor = theme.colors.accentRed;
+    await pumpMinyWidgets(
+      tester,
+      child: MinyLoader(
+        color: customColor,
+      ),
+    );
+    // Act
+    final circularProgressIndicatorFinder =
+        find.byType(CircularProgressIndicator);
+    final indicator = tester.widget(circularProgressIndicatorFinder)
+        as CircularProgressIndicator;
+    // Assert
+    expect(
+      (indicator.valueColor as AlwaysStoppedAnimation).value,
+      equals(customColor),
+    );
+  });
+  testWidgets(
+      'Given a size '
+      'When MinyLoader is rendered '
+      'Then it should display with the specified size',
+      (WidgetTester tester) async {
+    const customSize = 48.0;
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: Scaffold(
+          body: MinyLoader(size: customSize),
         ),
-      );
-
-      // Act: Find the CirculaÞrProgressIndicator.
-      final circularProgressIndicatorFinder =
-          find.byType(CircularProgressIndicator);
-
-      // Assert: Check that CircularProgressIndicator is present.
-      expect(circularProgressIndicatorFinder, findsOneWidget);
-
-      // Check default size.
-      final sizedBox = tester.widget(find.byType(SizedBox)) as SizedBox;
-      expect(sizedBox.width, 24.0);
-      expect(sizedBox.height, 24.0);
-
-      // Check default color (assume default is Colors.blue from widget).
-      final indicator = tester.widget(circularProgressIndicatorFinder)
-          as CircularProgressIndicator;
-      expect(
-        (indicator.valueColor as AlwaysStoppedAnimation).value,
-        equals(Colors.blue),
-      );
-    });
-
-    testWidgets(
-        'Should display CircularProgressIndicator with custom size and color',
-        (WidgetTester tester) async {
-      // Arrange: Custom size and color.
-      const customSize = 48.0;
-      const Color customColor = Colors.red;
-
-      await tester.pumpWidget(
-        const MaterialApp(
-          home: Scaffold(
-            body: MinyLoader(size: customSize, color: customColor),
-          ),
-        ),
-      );
-
-      // Act: Find the CircularProgressIndicator.
-      final circularProgressIndicatorFinder =
-          find.byType(CircularProgressIndicator);
-
-      // Assert: Check that CircularProgressIndicator is present.
-      expect(circularProgressIndicatorFinder, findsOneWidget);
-
-      // Check custom size.
-      final sizedBox = tester.widget(find.byType(SizedBox)) as SizedBox;
-      expect(sizedBox.width, customSize);
-      expect(sizedBox.height, customSize);
-
-      // Check custom color.
-      final indicator = tester.widget(circularProgressIndicatorFinder)
-          as CircularProgressIndicator;
-      expect(
-        (indicator.valueColor as AlwaysStoppedAnimation).value,
-        equals(customColor),
-      );
-    });
+      ),
+    );
+    final sizedBox = tester.widget(find.byType(SizedBox)) as SizedBox;
+    expect(find.byType(SizedBox), findsOneWidget);
+    expect(sizedBox.width, customSize);
+    expect(sizedBox.height, customSize);
   });
 }
