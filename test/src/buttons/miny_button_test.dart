@@ -14,7 +14,7 @@ void main() {
         (WidgetTester tester) async {
       await pumpMinyWidgets(
         tester,
-        child: const MinyButton(
+        child: (_) => const MinyButton(
           label: testLabel,
           isLoading: true,
         ),
@@ -38,7 +38,7 @@ void main() {
 
       await pumpMinyWidgets(
         tester,
-        child: MinyButton(
+        child: (_) => MinyButton(
           label: testLabel,
           isLoading: true,
           onPressed: () {
@@ -63,7 +63,7 @@ void main() {
 
       await pumpMinyWidgets(
         tester,
-        child: MinyButton(
+        child: (_) => MinyButton(
           label: testLabel,
           onPressed: () {
             isPressed = true;
@@ -85,7 +85,7 @@ void main() {
           (WidgetTester tester) async {
         await pumpMinyWidgets(
           tester,
-          child: const MinyButton(
+          child: (_) => const MinyButton(
             label: testLabel,
             enableIcon: true,
           ),
@@ -106,7 +106,7 @@ void main() {
           (WidgetTester tester) async {
         await pumpMinyWidgets(
           tester,
-          child: const MinyButton(
+          child: (_) => const MinyButton(
             label: testLabel,
             iconPath: iconPath,
             enableIcon: true,
@@ -128,7 +128,7 @@ void main() {
         'Then it displays only the label', (WidgetTester tester) async {
       await pumpMinyWidgets(
         tester,
-        child: const MinyButton(
+        child: (_) => const MinyButton(
           label: testLabel,
         ),
       );
