@@ -55,12 +55,16 @@ class MinyButton extends StatelessWidget {
                     ),
                   ),
                 if (enableIcon) SizedBox(width: theme.spacing.width.s12),
-                Text(
-                  label,
-                  style: theme.textStyle.bodyMedium.copyWith(
-                    color: theme.colors.neutralLight,
+                Flexible(
+                  child: Text(
+                    label,
+                    style: theme.textStyle.bodyMedium.copyWith(
+                      color: theme.colors.neutralLight,
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                ),
+                )
               ],
             ),
     );
