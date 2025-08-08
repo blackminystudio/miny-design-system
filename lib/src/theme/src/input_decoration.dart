@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:miny_design_system/miny_design_system.dart';
 
-final _theme = ThemeData();
-
 final inputDecoration = InputDecorationTheme(
   contentPadding: EdgeInsets.symmetric(
-    vertical: _theme.spacing.height.s20,
-    horizontal: _theme.spacing.width.s24,
+    vertical: _theme.spacing.s20,
+    horizontal: _theme.spacing.s24,
   ),
   hintStyle: _theme.textStyle.bodyMedium.copyWith(
     color: _theme.colors.textSecondarylight,
@@ -27,7 +25,7 @@ final _squircleBorder = SmoothInputBorder(
     side: BorderSide(
       // TODO: Color Token
       color: Color(0xffE7E5E7),
-      width: _theme.sizing.width.half,
+      width: _theme.sizing.half,
     ),
     borderRadius: SmoothBorderRadius(
       cornerRadius: _theme.borderradius.medium,
@@ -36,3 +34,5 @@ final _squircleBorder = SmoothInputBorder(
     borderAlign: BorderAlign.inside,
   ),
 );
+
+final _theme = ThemeData();

@@ -33,8 +33,8 @@ class MinyButton extends StatelessWidget {
       ),
       child: isLoading
           ? SizedBox(
-              height: theme.sizing.height.s8,
-              width: theme.sizing.height.s8,
+              height: theme.sizing.s8,
+              width: theme.sizing.s8,
               child: CircularProgressIndicator(
                 strokeWidth: 2.5,
                 strokeCap: StrokeCap.round,
@@ -47,14 +47,14 @@ class MinyButton extends StatelessWidget {
               children: [
                 if (enableIcon)
                   Image(
-                    height: theme.sizing.height.s6,
-                    width: theme.sizing.height.s6,
+                    height: theme.sizing.s6,
+                    width: theme.sizing.s6,
                     image: AssetImage(
                       iconPath ??
                           'packages/miny_design_system/assets/images/google_icon.png',
                     ),
                   ),
-                if (enableIcon) SizedBox(width: theme.spacing.width.s12),
+                if (enableIcon) SizedBox(width: theme.spacing.s12),
                 Flexible(
                   child: Text(
                     label,

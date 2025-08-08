@@ -12,6 +12,26 @@ import 'src/themedata.dart';
 
 export 'miny_icons.dart';
 
+// THEME EXTENTIONS
+
+final themeExtentions = <ThemeExtension<dynamic>>[
+  // These are used with non-const as they are providing dynamic sizes
+  // accroding to the screen sizes
+  ...[
+    MinySizing(),
+    MinySpacing(),
+    MinyTypography(),
+  ],
+  // These are fix sizes accroding to the design system
+  ...[
+    const MinyColors(),
+    const MinyOpacity(),
+    const MinyElevation(),
+    const MinyBorderWidth(),
+    const MinyBorderRadius(),
+  ]
+];
+
 class MinyTheme {
   static ThemeData get lightTheme {
     return ThemeData(
@@ -42,49 +62,29 @@ class MinyTheme {
         labelSmall: MinyTypography().bodyXxsmall,
       ),
       chipTheme: chipThemeData,
-      indicatorColor: Colors.white,
       elevatedButtonTheme: elevatedButtonThemeData,
       progressIndicatorTheme: progressIndicatorThemeData,
       extensions: themeExtentions,
       inputDecorationTheme: inputDecoration,
+      tabBarTheme: TabBarThemeData(indicatorColor: Colors.white),
     );
   }
 }
 
-// THEME EXTENTIONS
-
-final themeExtentions = <ThemeExtension<dynamic>>[
-  // These are used with non-const as they are providing dynamic sizes
-  // accroding to the screen sizes
-  ...[
-    MinySizing(),
-    MinySpacing(),
-    MinyTypography(),
-  ],
-  // These are fix sizes accroding to the design system
-  ...[
-    const MinyColors(),
-    const MinyOpacity(),
-    const MinyElevation(),
-    const MinyBorderWidth(),
-    const MinyBorderRadius(),
-  ]
-];
-
 extension ThemeExtensions on ThemeData {
+  MinyBorderRadius get borderradius =>
+      extension<MinyBorderRadius>() ?? const MinyBorderRadius();
+  MinyBorderWidth get borderwidth =>
+      extension<MinyBorderWidth>() ?? const MinyBorderWidth();
+  // These are fix sizes accroding to the design system
+  MinyColors get colors => extension<MinyColors>() ?? const MinyColors();
+  MinyElevation get elevation =>
+      extension<MinyElevation>() ?? const MinyElevation();
+  MinyOpacity get opacity => extension<MinyOpacity>() ?? const MinyOpacity();
   // These are used with non-const as they are providing dynamic sizes
   // accroding to the screen sizes
   MinySizing get sizing => extension<MinySizing>() ?? MinySizing();
   MinySpacing get spacing => extension<MinySpacing>() ?? MinySpacing();
   MinyTypography get textStyle =>
       extension<MinyTypography>() ?? MinyTypography();
-  // These are fix sizes accroding to the design system
-  MinyColors get colors => extension<MinyColors>() ?? const MinyColors();
-  MinyOpacity get opacity => extension<MinyOpacity>() ?? const MinyOpacity();
-  MinyElevation get elevation =>
-      extension<MinyElevation>() ?? const MinyElevation();
-  MinyBorderWidth get borderwidth =>
-      extension<MinyBorderWidth>() ?? const MinyBorderWidth();
-  MinyBorderRadius get borderradius =>
-      extension<MinyBorderRadius>() ?? const MinyBorderRadius();
 }
