@@ -32,7 +32,7 @@ class MinyContainer extends StatelessWidget {
           ),
         ),
       ),
-      padding: padding ?? EdgeInsets.all(theme.sizing.height.s3),
+      padding: padding ?? EdgeInsets.all(theme.sizing.s3),
       child: child,
     );
   }

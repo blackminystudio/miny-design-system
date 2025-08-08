@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:miny_design_system/miny_design_system.dart';
 
-final theme = ThemeData();
-
 final chipThemeData = ChipThemeData(
   showCheckmark: false,
   padding: EdgeInsets.symmetric(
-    vertical: theme.spacing.height.s16,
-    horizontal: theme.spacing.height.s40,
+    vertical: theme.spacing.s16,
+    horizontal: theme.spacing.s40,
   ),
   labelPadding: EdgeInsets.zero,
   selectedColor: theme.colors.textPrimary,
@@ -28,3 +26,5 @@ final chipThemeData = ChipThemeData(
     ),
   ),
 );
+
+final theme = ThemeData();

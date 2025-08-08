@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:miny_design_system/miny_design_system.dart';
 
-final _theme = ThemeData();
 final elevatedButtonThemeData = ElevatedButtonThemeData(
   style: ButtonStyle(
     minimumSize: WidgetStateProperty.all(
       Size(
         double.infinity,
-        _theme.sizing.height.s14,
+        _theme.sizing.s14,
       ),
     ),
     backgroundColor: WidgetStateProperty.resolveWith<Color>(
@@ -42,3 +41,4 @@ final elevatedButtonThemeData = ElevatedButtonThemeData(
     ),
   ),
 );
+final _theme = ThemeData();
